@@ -127,17 +127,14 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">斜川的技术博客</h1>
-        
     </div>
 </header>
 
         <section class="main">
             
-                
 <div class="post">
 
-    <div class="post-header index">
+    <div class="post-header">
         <h1 class="title">
             <a href="/2017/06/15/mobike-我的贴纸/">
                 Untitled
@@ -147,14 +144,18 @@
             
                 <span class="date">2017-06-15</span>
             
-            
+            <a href="#disqus_thread" class="comments">Kommentare</a>
             
         </div>
     </div>
 
-    
-        <div class="content">
-            <hr>
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <hr>
 <h2 id="高仿摩拜单车我的贴纸效果"><a href="#高仿摩拜单车我的贴纸效果" class="headerlink" title=" 高仿摩拜单车我的贴纸效果"></a> 高仿摩拜单车我的贴纸效果</h2><h5 id="昨天在看摩拜单车APP时发现了一个有趣的地方，如下图。多个小球可以随手机的晃动而滚动，并有碰撞的效果，很有趣，我昨天玩这个玩了半个小时😄，玩的过程中大概想到了实现思路，仿真动画-重力感应。但是在仿真动画这一点存在一个疑惑，我在很早的时候写过一个模拟牛顿摆的demo，但是因为view都是矩形的，所以看起来碰撞的过程很不自然，这个问题当时并没有得到解决。今天我在尝试使用这个思路做的时候，我想到系统可能提供有解决的方法，于是我进入到碰撞UICollisionBehavior的头文件中去查找，并没有找到我想要的方法，然后我又到UIDynamicItem协议中，发现了这个方法：-property-nonatomic-readonly-UIDynamicItemCollisionBoundsType-collisionBoundsType-NS-AVAILABLE-IOS-9-0-，这是一个枚举值，用来定义碰撞的边界类型，有矩形，椭圆和path，其中-UIDynamicItemCollisionBoundsTypePath-对应的是这个方法"><a href="#昨天在看摩拜单车APP时发现了一个有趣的地方，如下图。多个小球可以随手机的晃动而滚动，并有碰撞的效果，很有趣，我昨天玩这个玩了半个小时😄，玩的过程中大概想到了实现思路，仿真动画-重力感应。但是在仿真动画这一点存在一个疑惑，我在很早的时候写过一个模拟牛顿摆的demo，但是因为view都是矩形的，所以看起来碰撞的过程很不自然，这个问题当时并没有得到解决。今天我在尝试使用这个思路做的时候，我想到系统可能提供有解决的方法，于是我进入到碰撞UICollisionBehavior的头文件中去查找，并没有找到我想要的方法，然后我又到UIDynamicItem协议中，发现了这个方法：-property-nonatomic-readonly-UIDynamicItemCollisionBoundsType-collisionBoundsType-NS-AVAILABLE-IOS-9-0-，这是一个枚举值，用来定义碰撞的边界类型，有矩形，椭圆和path，其中-UIDynamicItemCollisionBoundsTypePath-对应的是这个方法" class="headerlink" title="昨天在看摩拜单车APP时发现了一个有趣的地方，如下图。多个小球可以随手机的晃动而滚动，并有碰撞的效果，很有趣，我昨天玩这个玩了半个小时😄，玩的过程中大概想到了实现思路，仿真动画+重力感应。但是在仿真动画这一点存在一个疑惑，我在很早的时候写过一个模拟牛顿摆的demo，但是因为view都是矩形的，所以看起来碰撞的过程很不自然，这个问题当时并没有得到解决。今天我在尝试使用这个思路做的时候，我想到系统可能提供有解决的方法，于是我进入到碰撞UICollisionBehavior的头文件中去查找，并没有找到我想要的方法，然后我又到UIDynamicItem协议中，发现了这个方法：@property (nonatomic, readonly) UIDynamicItemCollisionBoundsType collisionBoundsType NS_AVAILABLE_IOS(9_0);，这是一个枚举值，用来定义碰撞的边界类型，有矩形，椭圆和path，其中 UIDynamicItemCollisionBoundsTypePath 对应的是这个方法"></a>昨天在看摩拜单车APP时发现了一个有趣的地方，如下图。多个小球可以随手机的晃动而滚动，并有碰撞的效果，很有趣，我昨天玩这个玩了半个小时😄，玩的过程中大概想到了实现思路，仿真动画+重力感应。但是在仿真动画这一点存在一个疑惑，我在很早的时候写过一个模拟牛顿摆的demo，但是因为view都是矩形的，所以看起来碰撞的过程很不自然，这个问题当时并没有得到解决。今天我在尝试使用这个思路做的时候，我想到系统可能提供有解决的方法，于是我进入到碰撞<code>UICollisionBehavior</code>的头文件中去查找，并没有找到我想要的方法，然后我又到<code>UIDynamicItem</code>协议中，发现了这个方法：<code>@property (nonatomic, readonly) UIDynamicItemCollisionBoundsType collisionBoundsType NS_AVAILABLE_IOS(9_0);</code>，这是一个枚举值，用来定义碰撞的边界类型，有矩形，椭圆和path，其中<code> UIDynamicItemCollisionBoundsTypePath </code>对应的是这个方法</h5><p><code> @property (nonatomic, readonly) UIBezierPath *collisionBoundingPath NS_AVAILABLE_IOS(9_0); </code></p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, <span class="built_in">UIDynamicItemCollisionBoundsType</span>) &#123;</div><div class="line">    <span class="built_in">UIDynamicItemCollisionBoundsTypeRectangle</span>,</div><div class="line">    <span class="built_in">UIDynamicItemCollisionBoundsTypeEllipse</span>, <span class="comment">// radii will be determined from the items bounds width, height</span></div><div class="line">    <span class="built_in">UIDynamicItemCollisionBoundsTypePath</span></div><div class="line">&#125; <span class="built_in">NS_ENUM_AVAILABLE_IOS</span>(<span class="number">9</span>_0);</div></pre></td></tr></table></figure>
 <p>#####这样就需要自定义一个view，并实现协议方法：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">UIDynamicItemCollisionBoundsType</span>)collisionBoundsType &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">UIDynamicItemCollisionBoundsTypeEllipse</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -167,119 +168,20 @@
 <hr>
 <h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="http://upload-images.jianshu.io/upload_images/1389572-0e83172bb47e98b8.gif?imageMogr2/auto-orient/strip" alt="effect.gif"><br>DEMO地址:<a href="https://github.com/Mrdongyueyue/DynamicAction" target="_blank" rel="external">DEMO</a></p>
 
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2017/01/18/wave/">
-                波浪效果的实现
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2017-01-18</span>
-            
-            
-            
-        </div>
     </div>
 
     
-        <div class="content">
-            <hr>
-<h2 id="分析波浪曲线函数"><a href="#分析波浪曲线函数" class="headerlink" title="分析波浪曲线函数"></a>分析波浪曲线函数</h2><p>我采用的是正弦曲线函数:y=Asin(ωx+φ)+k<br>下面是正弦曲线的坐标图<br><img src="http://upload-images.jianshu.io/upload_images/1389572-d2d2f7012342959f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="y = sin(x\)" title="y = sin(x)"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1389572-992fc852a51c599e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="y = 10sin(x\)" title="y = 10sin(x)"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1389572-f6678e19e5d85221.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="y = 10sin(0.03x\)" title="y = 10sin(0.03x)"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1389572-91cbea659110beec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="y = 10sin(0.03x + 0.5\)" title="y = 10sin(0.03x + 0.5)"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1389572-e78e436b1fddeb3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="y = 10sin(0.03x + 0.5\) + 10" title="y = 10sin(0.03x + 0.5) + 10"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1389572-c1e7c519f37f8498.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="y = 10cos(0.03x + 0.5\) + 10" title="y = 10cos(0.03x + 0.5) + 10"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1389572-fb7bfad4098bf919.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="双层波 灰色cos 黑色sin" title="双层波 灰色cos 黑色sin"><br><img src="http://upload-images.jianshu.io/upload_images/1389572-e5b8a2973b414335.gif?imageMogr2/auto-orient/strip" alt="效果图" title="效果图"><br><img src="http://upload-images.jianshu.io/upload_images/1389572-cb8eb55ca60c00df.gif?imageMogr2/auto-orient/strip" alt="渐变色" title="渐变色"></p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">_shapeLayer = [<span class="built_in">CAShapeLayer</span> layer];</div><div class="line">_shapeLayer.frame = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">100</span>, <span class="number">375</span>, <span class="number">150</span>);</div><div class="line"></div><div class="line">_shapeLayer2 = [<span class="built_in">CAShapeLayer</span> layer];</div><div class="line">_shapeLayer2.frame = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">100</span>, <span class="number">375</span>, <span class="number">150</span>);</div><div class="line"></div><div class="line">_displayLink = [<span class="built_in">CADisplayLink</span> displayLinkWithTarget:<span class="keyword">self</span> selector:<span class="keyword">@selector</span>(drawPath)];</div><div class="line">[_displayLink addToRunLoop:[<span class="built_in">NSRunLoop</span> mainRunLoop] forMode:<span class="built_in">NSRunLoopCommonModes</span>];</div><div class="line"></div><div class="line">[<span class="keyword">self</span> addGradient1];</div><div class="line">[<span class="keyword">self</span> addGradient2];</div></pre></td></tr></table></figure>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">double</span> i = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="built_in">CGFloat</span> A = <span class="number">10.</span>f;<span class="comment">//A振幅</span></div><div class="line">    <span class="built_in">CGFloat</span> k = <span class="number">0</span>;<span class="comment">//y轴偏移</span></div><div class="line">    <span class="built_in">CGFloat</span> ω = <span class="number">0.03</span>;<span class="comment">//角速度ω变大，则波形在X轴上收缩（波形变紧密）；角速度ω变小，则波形在X轴上延展（波形变稀疏）。不等于0</span></div><div class="line">    <span class="built_in">CGFloat</span> φ = <span class="number">0</span> + i;<span class="comment">//初相，x=0时的相位；反映在坐标系上则为图像的左右移动。</span></div><div class="line">    <span class="comment">//y=Asin(ωx+φ)+k</span></div><div class="line"></div><div class="line">    _path = [<span class="built_in">UIBezierPath</span> bezierPath];</div><div class="line">    _path2 = [<span class="built_in">UIBezierPath</span> bezierPath];</div><div class="line"></div><div class="line">    [_path moveToPoint:<span class="built_in">CGPointZero</span>];</div><div class="line">    [_path2 moveToPoint:<span class="built_in">CGPointZero</span>];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">376</span>; i ++) &#123;</div><div class="line">        <span class="built_in">CGFloat</span> x = i;</div><div class="line">        <span class="built_in">CGFloat</span> y = A * sin(ω*x+φ)+k;</div><div class="line">        <span class="built_in">CGFloat</span> y2 = A * cos(ω*x+φ)+k;</div><div class="line">        [_path addLineToPoint:<span class="built_in">CGPointMake</span>(x, y)];</div><div class="line">        [_path2 addLineToPoint:<span class="built_in">CGPointMake</span>(x, y2)];</div><div class="line">    &#125;</div><div class="line">    [_path addLineToPoint:<span class="built_in">CGPointMake</span>(<span class="number">375</span>, <span class="number">-100</span>)];</div><div class="line">    [_path addLineToPoint:<span class="built_in">CGPointMake</span>(<span class="number">0</span>, <span class="number">-100</span>)];</div><div class="line">    _path.lineWidth = <span class="number">1</span>;</div><div class="line"></div><div class="line">    _shapeLayer.path = _path.CGPath;</div><div class="line"></div><div class="line">    [_path2 addLineToPoint:<span class="built_in">CGPointMake</span>(<span class="number">375</span>, <span class="number">-100</span>)];</div><div class="line">    [_path2 addLineToPoint:<span class="built_in">CGPointMake</span>(<span class="number">0</span>, <span class="number">-100</span>)];</div><div class="line">    _path2.lineWidth = <span class="number">1</span>;</div><div class="line"></div><div class="line">    _shapeLayer2.path = _path2.CGPath;</div><div class="line"></div><div class="line">    i += <span class="number">0.1</span>;</div><div class="line">    <span class="keyword">if</span> (i &gt; M_PI * <span class="number">2</span>) &#123;</div><div class="line">        i = <span class="number">0</span>;<span class="comment">//防止i越界</span></div><div class="line">    &#125;</div><div class="line">    _gradientLayer.mask = _shapeLayer;</div><div class="line">    _gradientLayer2.mask = _shapeLayer2;</div></pre></td></tr></table></figure>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addGradient1 &#123;</div><div class="line">    <span class="comment">//139 70 83</span></div><div class="line">    <span class="comment">//174 252 217</span></div><div class="line">    _gradientLayer = [<span class="built_in">CAGradientLayer</span> layer];</div><div class="line">    <span class="built_in">NSInteger</span> count = <span class="number">20</span>;</div><div class="line">    <span class="built_in">NSMutableArray</span> *colors = [<span class="built_in">NSMutableArray</span> array];</div><div class="line">    <span class="built_in">NSMutableArray</span> *locations = [<span class="built_in">NSMutableArray</span> array];</div><div class="line">    <span class="keyword">for</span> (<span class="built_in">NSInteger</span> i = <span class="number">0</span>; i &lt; count ; i ++) &#123;</div><div class="line">        <span class="built_in">UIColor</span> *color = [<span class="built_in">UIColor</span> colorWithRed:arc4random_uniform(<span class="number">255</span>)/<span class="number">255.0</span> green:arc4random_uniform(<span class="number">255</span>)/<span class="number">255.0</span> blue:arc4random_uniform(<span class="number">255</span>)/<span class="number">255.0</span> alpha:<span class="number">0.3</span>];</div><div class="line">        [colors addObject:(__bridge <span class="keyword">id</span>)color.CGColor];</div><div class="line">        [locations addObject:@(i /(<span class="built_in">CGFloat</span>)count)];</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//颜色数组</span></div><div class="line">    _gradientLayer.colors = colors;</div><div class="line">    <span class="comment">//可以不设置</span></div><div class="line">    _gradientLayer.locations = locations;</div><div class="line">    <span class="comment">//startPoint endPoint 确定条纹方向 不设置 默认水平默认值[.5,0]和[.5,1]</span></div><div class="line">    _gradientLayer.startPoint = <span class="built_in">CGPointMake</span>(<span class="number">0</span>, <span class="number">0</span>);</div><div class="line">    _gradientLayer.endPoint = <span class="built_in">CGPointMake</span>(<span class="number">1</span>, <span class="number">1</span>);</div><div class="line"></div><div class="line">    _gradientLayer.type = kCAGradientLayerAxial;</div><div class="line"></div><div class="line">    _gradientLayer.frame = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">375</span>, <span class="number">150</span>);</div><div class="line"></div><div class="line">    [<span class="keyword">self</span>.view.layer addSublayer:_gradientLayer];</div><div class="line"></div><div class="line">    <span class="built_in">CABasicAnimation</span> *animation = [<span class="built_in">CABasicAnimation</span> animationWithKeyPath:<span class="string">@"colors"</span>];</div><div class="line"></div><div class="line">    animation.duration = <span class="number">2</span>;</div><div class="line"></div><div class="line">    animation.repeatCount = MAXFLOAT;</div><div class="line"></div><div class="line">    <span class="built_in">NSMutableArray</span> *toValue = [<span class="built_in">NSMutableArray</span> array];</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="built_in">NSInteger</span> i = <span class="number">0</span>; i &lt; count ; i ++) &#123;</div><div class="line"></div><div class="line">        <span class="built_in">UIColor</span> *color = [<span class="built_in">UIColor</span> colorWithRed:arc4random_uniform(<span class="number">255</span>)/<span class="number">255.0</span> green:arc4random_uniform(<span class="number">255</span>)/<span class="number">255.0</span> blue:arc4random_uniform(<span class="number">255</span>)/<span class="number">255.0</span> alpha:<span class="number">0.3</span>];</div><div class="line"></div><div class="line">        [toValue addObject:(__bridge <span class="keyword">id</span>)color.CGColor];</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    animation.autoreverses = <span class="literal">YES</span>;</div><div class="line">    animation.toValue = toValue;</div><div class="line">    [_gradientLayer addAnimation:animation forKey:<span class="string">@"gradientLayer"</span>];</div><div class="line"></div><div class="line">&#125;</div><div class="line">- (<span class="keyword">void</span>)addGradient2 &#123;</div><div class="line"></div><div class="line">    _gradientLayer2 = [<span class="built_in">CAGradientLayer</span> layer];</div><div class="line">    <span class="built_in">NSInteger</span> count = <span class="number">20</span>;</div><div class="line">    <span class="built_in">NSMutableArray</span> *colors = [<span class="built_in">NSMutableArray</span> array];</div><div class="line">    <span class="built_in">NSMutableArray</span> *locations = [<span class="built_in">NSMutableArray</span> array];</div><div class="line">    <span class="keyword">for</span> (<span class="built_in">NSInteger</span> i = <span class="number">0</span>; i &lt; count ; i ++) &#123;</div><div class="line">        <span class="built_in">UIColor</span> *color = [<span class="built_in">UIColor</span> colorWithRed:arc4random_uniform(<span class="number">255</span>)/<span class="number">255.0</span> green:arc4random_uniform(<span class="number">255</span>)/<span class="number">255.0</span> blue:arc4random_uniform(<span class="number">255</span>)/<span class="number">255.0</span> alpha:<span class="number">0.3</span>];</div><div class="line">        [colors addObject:(__bridge <span class="keyword">id</span>)color.CGColor];</div><div class="line">        [locations addObject:@(i /(<span class="built_in">CGFloat</span>)count)];</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//颜色数组</span></div><div class="line">    _gradientLayer2.colors = colors;</div><div class="line">    <span class="comment">//可以不设置</span></div><div class="line">    _gradientLayer2.locations = locations;</div><div class="line">    <span class="comment">//startPoint endPoint 确定条纹方向 不设置 默认水平默认值[.5,0]和[.5,1]</span></div><div class="line">    _gradientLayer2.startPoint = <span class="built_in">CGPointMake</span>(<span class="number">1</span>, <span class="number">0</span>);</div><div class="line">    _gradientLayer2.endPoint = <span class="built_in">CGPointMake</span>(<span class="number">0</span>, <span class="number">1</span>);</div><div class="line"></div><div class="line">    _gradientLayer2.type = kCAGradientLayerAxial;</div><div class="line"></div><div class="line">    _gradientLayer2.frame = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">375</span>, <span class="number">150</span>);</div><div class="line"></div><div class="line">    [<span class="keyword">self</span>.view.layer addSublayer:_gradientLayer2];</div><div class="line"></div><div class="line">    <span class="built_in">CABasicAnimation</span> *animation = [<span class="built_in">CABasicAnimation</span> animationWithKeyPath:<span class="string">@"colors"</span>];</div><div class="line"></div><div class="line">    animation.duration = <span class="number">2</span>;</div><div class="line"></div><div class="line">    animation.repeatCount = MAXFLOAT;</div><div class="line"></div><div class="line">    <span class="built_in">NSMutableArray</span> *toValue = [<span class="built_in">NSMutableArray</span> array];</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="built_in">NSInteger</span> i = <span class="number">0</span>; i &lt; count ; i ++) &#123;</div><div class="line"></div><div class="line">        <span class="built_in">UIColor</span> *color = [<span class="built_in">UIColor</span> colorWithRed:arc4random_uniform(<span class="number">255</span>)/<span class="number">255.0</span> green:arc4random_uniform(<span class="number">255</span>)/<span class="number">255.0</span> blue:arc4random_uniform(<span class="number">255</span>)/<span class="number">255.0</span> alpha:<span class="number">0.3</span>];</div><div class="line"></div><div class="line">        [toValue addObject:(__bridge <span class="keyword">id</span>)color.CGColor];</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    animation.autoreverses = <span class="literal">YES</span>;</div><div class="line">    animation.toValue = toValue;</div><div class="line">    [_gradientLayer2 addAnimation:animation forKey:<span class="string">@"gradientLayer"</span>];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>DEMO地址:<a href="https://github.com/Mrdongyueyue/wavesDemo" target="_blank" rel="external">DEMO</a></p>
 
-        </div>
+    
+
+    <!-- Comments -->
     
 
 </div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2017/01/17/MyFristBlog/">
-                测试第一次发布
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2017-01-17</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">测试第一次发布</div></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2017/01/17/hello-world/">
-                Hello World
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2017-01-17</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-        </div>
-    
-
-</div>
-            
         </section>
+
     </div>
 </div>
-
-
-
-
-
 
 </div>
 
