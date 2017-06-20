@@ -16,7 +16,7 @@
 <meta property="og:description" content="分析昨天在看摩拜单车APP时发现了一个有趣的地方，如下图。多个小球可以随手机的晃动而滚动，并有碰撞的效果，很有趣，我昨天玩这个玩了半个小时😄，玩的过程中大概想到了实现思路，仿真动画+重力感应。但是在仿真动画这一点存在一个疑惑，我在很早的时候写过一个模拟牛顿摆的demo，但是因为view都是矩形的，所以看起来碰撞的过程很不自然，这个问题当时并没有得到解决。今天我在尝试使用这个思路做的时候，我想到">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1389572-cb41c14c7d2444a1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1389572-0e83172bb47e98b8.gif?imageMogr2/auto-orient/strip">
-<meta property="og:updated_time" content="2017-06-15T06:58:57.000Z">
+<meta property="og:updated_time" content="2017-06-20T09:24:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高仿摩拜单车我的贴纸效果">
 <meta name="twitter:description" content="分析昨天在看摩拜单车APP时发现了一个有趣的地方，如下图。多个小球可以随手机的晃动而滚动，并有碰撞的效果，很有趣，我昨天玩这个玩了半个小时😄，玩的过程中大概想到了实现思路，仿真动画+重力感应。但是在仿真动画这一点存在一个疑惑，我在很早的时候写过一个模拟牛顿摆的demo，但是因为view都是矩形的，所以看起来碰撞的过程很不自然，这个问题当时并没有得到解决。今天我在尝试使用这个思路做的时候，我想到">
@@ -67,10 +67,6 @@
 		</nav>
 		<nav class="header-smart-menu">
     		
-    			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
     			
     			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
@@ -173,8 +169,7 @@
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, <span class="built_in">UIDynamicItemCollisionBoundsType</span>) &#123;</div><div class="line">    <span class="built_in">UIDynamicItemCollisionBoundsTypeRectangle</span>,</div><div class="line">    <span class="built_in">UIDynamicItemCollisionBoundsTypeEllipse</span>, <span class="comment">// radii will be determined from the items bounds width, height</span></div><div class="line">    <span class="built_in">UIDynamicItemCollisionBoundsTypePath</span></div><div class="line">&#125; <span class="built_in">NS_ENUM_AVAILABLE_IOS</span>(<span class="number">9</span>_0);</div></pre></td></tr></table></figure>
 <p>#####这样就需要自定义一个view，并实现协议方法：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">UIDynamicItemCollisionBoundsType</span>)collisionBoundsType &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">UIDynamicItemCollisionBoundsTypeEllipse</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1389572-cb41c14c7d2444a1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="摩拜单车-我的贴纸"></p>
-<hr>
-<h2 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="built_in">UIDynamicAnimator</span> *animator;</div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="built_in">UIGravityBehavior</span> *gravity;</div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="built_in">CMMotionManager</span> *motionManager;</div></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="built_in">UIDynamicAnimator</span> *animator;</div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="built_in">UIGravityBehavior</span> *gravity;</div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>, <span class="keyword">nonatomic</span>) <span class="built_in">CMMotionManager</span> *motionManager;</div></pre></td></tr></table></figure>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">_animator = [[<span class="built_in">UIDynamicAnimator</span> alloc] initWithReferenceView:<span class="keyword">self</span>.view];</div><div class="line"></div><div class="line">    <span class="built_in">NSInteger</span> count = <span class="number">35</span>;</div><div class="line">    <span class="built_in">CGFloat</span> itemW = <span class="number">30</span>;</div><div class="line">    <span class="built_in">NSMutableArray</span> &lt;<span class="built_in">UIView</span> *&gt;* items = [<span class="built_in">NSMutableArray</span> array];</div><div class="line">    <span class="keyword">for</span> (<span class="built_in">NSInteger</span> i = <span class="number">0</span>; i &lt; count; i ++) &#123;</div><div class="line">        <span class="built_in">CGFloat</span> X = i % <span class="number">10</span> * itemW;</div><div class="line">        <span class="built_in">CGFloat</span> Y = <span class="number">200</span> + (<span class="number">35</span> + i / <span class="number">10</span>);</div><div class="line"></div><div class="line">        YYView *view = [[YYView alloc] initWithFrame:<span class="built_in">CGRectMake</span>(X, Y, itemW, itemW)];</div><div class="line">        view.layer.cornerRadius = itemW / <span class="number">2</span>;</div><div class="line">        view.layer.borderWidth = <span class="number">1</span>;</div><div class="line">        view.layer.borderColor = <span class="built_in">UIColor</span>.lightGrayColor.CGColor;</div><div class="line">        view.layer.masksToBounds = <span class="literal">YES</span>;</div><div class="line">        [<span class="keyword">self</span>.view addSubview:view];</div><div class="line"></div><div class="line">        [items addObject:view];</div><div class="line">    &#125;</div><div class="line">    _gravity = [[<span class="built_in">UIGravityBehavior</span> alloc] initWithItems:items];</div><div class="line">    [_animator addBehavior:_gravity];</div><div class="line"></div><div class="line">    <span class="built_in">UICollisionBehavior</span> *collision = [[<span class="built_in">UICollisionBehavior</span> alloc] initWithItems:items];</div><div class="line">    [collision addBoundaryWithIdentifier:<span class="string">@"view"</span> forPath:[<span class="built_in">UIBezierPath</span> bezierPathWithRect:[<span class="built_in">UIScreen</span> mainScreen].bounds]];</div><div class="line">    [_animator addBehavior:collision];</div><div class="line"></div><div class="line"></div><div class="line">    _motionManager = [[<span class="built_in">CMMotionManager</span> alloc] init];</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (_motionManager.deviceMotionAvailable) &#123;</div><div class="line">        <span class="built_in">NSOperationQueue</span> *queue = [[<span class="built_in">NSOperationQueue</span> alloc] init];</div><div class="line"></div><div class="line">        [_motionManager startDeviceMotionUpdatesToQueue:queue withHandler:^(<span class="built_in">CMDeviceMotion</span> * _Nullable motion, <span class="built_in">NSError</span> * _Nullable error) &#123;</div><div class="line">            <span class="keyword">if</span> (!error) &#123;</div><div class="line">                <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</div><div class="line">                    _gravity.gravityDirection = <span class="built_in">CGVectorMake</span>(motion.gravity.x, -motion.gravity.y);</div><div class="line">                &#125;);</div><div class="line">            &#125;</div><div class="line">        &#125;];</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"deviceMotion不可用"</span>);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <hr>
 <h2 id="在模拟器上无法使用重力感应，此处进行简单模拟"><a href="#在模拟器上无法使用重力感应，此处进行简单模拟" class="headerlink" title="在模拟器上无法使用重力感应，此处进行简单模拟"></a>在模拟器上无法使用重力感应，此处进行简单模拟</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#if TARGET_IPHONE_SIMULATOR</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span>&lt;<span class="built_in">UITouch</span> *&gt; *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</div><div class="line">    <span class="built_in">CGVector</span> ve0 = <span class="built_in">CGVectorMake</span>(<span class="number">0</span>, <span class="number">1</span>);</div><div class="line">    <span class="built_in">CGVector</span> ve1 = <span class="built_in">CGVectorMake</span>(<span class="number">1</span>, <span class="number">0</span>);</div><div class="line">    <span class="built_in">CGVector</span> ve2 = <span class="built_in">CGVectorMake</span>(<span class="number">0</span>, <span class="number">-1</span>);</div><div class="line">    <span class="built_in">CGVector</span> ve3 = <span class="built_in">CGVectorMake</span>(<span class="number">-1</span>, <span class="number">0</span>);</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">CGVectorEqualToVector</span>(_gravity.gravityDirection, ve0)) &#123;</div><div class="line">        _gravity.gravityDirection = ve1;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">CGVectorEqualToVector</span>(_gravity.gravityDirection, ve1)) &#123;</div><div class="line">        _gravity.gravityDirection = ve2;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">CGVectorEqualToVector</span>(_gravity.gravityDirection, ve2)) &#123;</div><div class="line">        _gravity.gravityDirection = ve3;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">CGVectorEqualToVector</span>(_gravity.gravityDirection, ve3)) &#123;</div><div class="line">        _gravity.gravityDirection = ve0;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">NS_INLINE</span> <span class="built_in">BOOL</span> <span class="built_in">CGVectorEqualToVector</span>(<span class="built_in">CGVector</span> vector0, <span class="built_in">CGVector</span> vector1) &#123;</div><div class="line">    <span class="keyword">return</span> (vector0.dx == vector1.dx) &amp;&amp; (vector0.dy == vector1.dy);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#endif</span></div></pre></td></tr></table></figure>
@@ -329,7 +324,7 @@
 		isCategory: false,
 		open_in_new: true,
 		root: "/",
-		innerArchive: true,
+		innerArchive: false,
 		showTags: false
 	}
 </script>
@@ -353,85 +348,22 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
   </div>
   <div class="tools-wrap">
-    
-    	<section class="tools-section tools-section-all" q-show="innerArchive">
-        <div class="search-wrap">
-          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
-          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
-          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
-        </div>
-        <div class="widget tagcloud search-tag">
-          <p class="search-tag-wording">tag:</p>
-          <label class="search-switch">
-            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
-          </label>
-          <ul class="article-tag-list" q-show="showTags">
-            
-            <div class="clearfix"></div>
-          </ul>
-        </div>
-        <ul class="search-ul">
-          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
-            3、在根目录_config.yml里添加配置：
-<pre style="font-size: 12px;" q-show="jsonFail">
-  jsonContent:
-    meta: false
-    pages: false
-    posts:
-      title: true
-      date: true
-      path: true
-      text: false
-      raw: false
-      content: false
-      slug: false
-      updated: false
-      comments: false
-      link: false
-      permalink: false
-      excerpt: false
-      categories: false
-      tags: true
-</pre>
-          </p>
-          <li class="search-li" q-repeat="items" q-show="isShow">
-            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
-            <p class="search-time">
-              <i class="icon-calendar icon"></i>
-              <span q-text="date|dateformat"></span>
-            </p>
-            <p class="search-tag">
-              <i class="icon-price-tags icon"></i>
-              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
-            </p>
-          </li>
-        </ul>
-    	</section>
     
 
     

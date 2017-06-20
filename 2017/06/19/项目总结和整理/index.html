@@ -16,7 +16,7 @@ User类一.应当包含的信息:用户是否登录用户信息（名字、头�
 <meta property="og:site_name" content="斜川的技术博客">
 <meta property="og:description" content="用户信息
 User类一.应当包含的信息:用户是否登录用户信息（名字、头像、性别、年龄等等）二.涵盖的功能1.用户信息的存储，修改并发出通知：1&amp;gt;注册或者登录后，服务端返回的用户信息进行解析，给属性赋值，发出用户已经登录的通知（如新浪微博的首页，当用户为登录时，展示的是提示页面，用户登录后展示的是timeline，使用通知来进行消息传递更合适）2&amp;gt;注册或者登录的接口不一定返回所有的用户">
-<meta property="og:updated_time" content="2017-06-19T08:57:05.000Z">
+<meta property="og:updated_time" content="2017-06-20T09:25:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目总结和整理">
 <meta name="twitter:description" content="用户信息
@@ -67,10 +67,6 @@ User类一.应当包含的信息:用户是否登录用户信息（名字、头�
 		</nav>
 		<nav class="header-smart-menu">
     		
-    			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
     			
     			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
@@ -170,7 +166,8 @@ User类一.应当包含的信息:用户是否登录用户信息（名字、头�
       
         <hr>
 <h2 id="用户信息"><a href="#用户信息" class="headerlink" title="用户信息"></a>用户信息</h2><hr>
-<h3 id="User类"><a href="#User类" class="headerlink" title="User类"></a>User类</h3><h4 id="一-应当包含的信息"><a href="#一-应当包含的信息" class="headerlink" title="一.应当包含的信息:"></a>一.应当包含的信息:</h4><h5 id="用户是否登录"><a href="#用户是否登录" class="headerlink" title="用户是否登录"></a>用户是否登录</h5><h5 id="用户信息（名字、头像、性别、年龄等等）"><a href="#用户信息（名字、头像、性别、年龄等等）" class="headerlink" title="用户信息（名字、头像、性别、年龄等等）"></a>用户信息（名字、头像、性别、年龄等等）</h5><h4 id="二-涵盖的功能"><a href="#二-涵盖的功能" class="headerlink" title="二.涵盖的功能"></a>二.涵盖的功能</h4><h5 id="1-用户信息的存储，修改并发出通知："><a href="#1-用户信息的存储，修改并发出通知：" class="headerlink" title="1.用户信息的存储，修改并发出通知："></a>1.用户信息的存储，修改并发出通知：</h5><h6 id="1-gt-注册或者登录后，服务端返回的用户信息进行解析，给属性赋值，发出用户已经登录的通知（如新浪微博的首页，当用户为登录时，展示的是提示页面，用户登录后展示的是timeline，使用通知来进行消息传递更合适）"><a href="#1-gt-注册或者登录后，服务端返回的用户信息进行解析，给属性赋值，发出用户已经登录的通知（如新浪微博的首页，当用户为登录时，展示的是提示页面，用户登录后展示的是timeline，使用通知来进行消息传递更合适）" class="headerlink" title="1&gt;注册或者登录后，服务端返回的用户信息进行解析，给属性赋值，发出用户已经登录的通知（如新浪微博的首页，当用户为登录时，展示的是提示页面，用户登录后展示的是timeline，使用通知来进行消息传递更合适）"></a>1&gt;注册或者登录后，服务端返回的用户信息进行解析，给属性赋值，发出用户已经登录的通知（如新浪微博的首页，当用户为登录时，展示的是提示页面，用户登录后展示的是timeline，使用通知来进行消息传递更合适）<br></h6><h6 id="2-gt-注册或者登录的接口不一定返回所有的用户信息（合理的做法应该是返回所有必要的用户信息），比如用户的头像性别等，不一定要求用户一次性设置完，并且可以修改，在用户进行个人信息修改之后，应该修改User的相应属性，并发出用户信息修改的通知，这样可以在展示用户信息的页面进行监听并做实时改变"><a href="#2-gt-注册或者登录的接口不一定返回所有的用户信息（合理的做法应该是返回所有必要的用户信息），比如用户的头像性别等，不一定要求用户一次性设置完，并且可以修改，在用户进行个人信息修改之后，应该修改User的相应属性，并发出用户信息修改的通知，这样可以在展示用户信息的页面进行监听并做实时改变" class="headerlink" title="2&gt;注册或者登录的接口不一定返回所有的用户信息（合理的做法应该是返回所有必要的用户信息），比如用户的头像性别等，不一定要求用户一次性设置完，并且可以修改，在用户进行个人信息修改之后，应该修改User的相应属性，并发出用户信息修改的通知，这样可以在展示用户信息的页面进行监听并做实时改变"></a>2&gt;注册或者登录的接口不一定返回所有的用户信息（合理的做法应该是返回所有必要的用户信息），比如用户的头像性别等，不一定要求用户一次性设置完，并且可以修改，在用户进行个人信息修改之后，应该修改User的相应属性，并发出用户信息修改的通知，这样可以在展示用户信息的页面进行监听并做实时改变<br></h6><h6 id="3-gt-User类发出的通知应有一下几种：登录，退出登录，修改密码，修改用户信息（可具体根据业务细分成多个，也可以在发送的通知中携带参数）"><a href="#3-gt-User类发出的通知应有一下几种：登录，退出登录，修改密码，修改用户信息（可具体根据业务细分成多个，也可以在发送的通知中携带参数）" class="headerlink" title="3&gt;User类发出的通知应有一下几种：登录，退出登录，修改密码，修改用户信息（可具体根据业务细分成多个，也可以在发送的通知中携带参数）"></a>3&gt;User类发出的通知应有一下几种：登录，退出登录，修改密码，修改用户信息（可具体根据业务细分成多个，也可以在发送的通知中携带参数）<br></h6><h6 id="4-gt-在load方法中初始化，读取本地数据，给相应的属性赋值；在登录、注册、用户修改了个人信息和app将要本挂起等情况下对用户信息进行本地存储，可使用对象归档或者NSUserDefaults存储；在用户退出登录时，将本地数据移除"><a href="#4-gt-在load方法中初始化，读取本地数据，给相应的属性赋值；在登录、注册、用户修改了个人信息和app将要本挂起等情况下对用户信息进行本地存储，可使用对象归档或者NSUserDefaults存储；在用户退出登录时，将本地数据移除" class="headerlink" title="4&gt;在load方法中初始化，读取本地数据，给相应的属性赋值；在登录、注册、用户修改了个人信息和app将要本挂起等情况下对用户信息进行本地存储，可使用对象归档或者NSUserDefaults存储；在用户退出登录时，将本地数据移除"></a>4&gt;在load方法中初始化，读取本地数据，给相应的属性赋值；在登录、注册、用户修改了个人信息和app将要本挂起等情况下对用户信息进行本地存储，可使用对象归档或者NSUserDefaults存储；在用户退出登录时，将本地数据移除</h6><h5 id="2-用户登录、注册、退出登录和修改密码的本地操作部分："><a href="#2-用户登录、注册、退出登录和修改密码的本地操作部分：" class="headerlink" title="2.用户登录、注册、退出登录和修改密码的本地操作部分："></a>2.用户登录、注册、退出登录和修改密码的本地操作部分：</h5><h6 id="1-gt-一些应用不会一开始就要求用户注册登录，而是在用户进行某种操作时，提示用户只有注册登录之后才能进行此类操作。"><a href="#1-gt-一些应用不会一开始就要求用户注册登录，而是在用户进行某种操作时，提示用户只有注册登录之后才能进行此类操作。" class="headerlink" title="1&gt;一些应用不会一开始就要求用户注册登录，而是在用户进行某种操作时，提示用户只有注册登录之后才能进行此类操作。"></a>1&gt;一些应用不会一开始就要求用户注册登录，而是在用户进行某种操作时，提示用户只有注册登录之后才能进行此类操作。</h6><h6 id="伪代码如下，弹出登录视图，用户登录完毕后通过回调结果来确定是否进行下一步操作。如新浪微博，用户未登录的情况下，可以浏览‘发现’中的微博，当用户点赞时，会弹出登录视图，当用户登录完毕后，点赞的操作会执行，不需要用户再一次点赞"><a href="#伪代码如下，弹出登录视图，用户登录完毕后通过回调结果来确定是否进行下一步操作。如新浪微博，用户未登录的情况下，可以浏览‘发现’中的微博，当用户点赞时，会弹出登录视图，当用户登录完毕后，点赞的操作会执行，不需要用户再一次点赞" class="headerlink" title="//伪代码如下，弹出登录视图，用户登录完毕后通过回调结果来确定是否进行下一步操作。如新浪微博，用户未登录的情况下，可以浏览‘发现’中的微博，当用户点赞时，会弹出登录视图，当用户登录完毕后，点赞的操作会执行，不需要用户再一次点赞"></a>//伪代码如下，弹出登录视图，用户登录完毕后通过回调结果来确定是否进行下一步操作。如新浪微博，用户未登录的情况下，可以浏览‘发现’中的微博，当用户点赞时，会弹出登录视图，当用户登录完毕后，点赞的操作会执行，不需要用户再一次点赞</h6><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)clickNeedUserLogin &#123;</div><div class="line">      <span class="keyword">if</span> (user.isLogin) &#123;</div><div class="line">          <span class="comment">//操作</span></div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">          __<span class="keyword">weak</span> __typeof__(<span class="keyword">self</span>)wself = <span class="keyword">self</span>;</div><div class="line">          [vc showLoginVC:^(<span class="built_in">BOOL</span> login)&#123;</div><div class="line">              <span class="keyword">if</span> (login) &#123;</div><div class="line">                  <span class="comment">//@option 根据产品流程决定是否调用此方法</span></div><div class="line">                  [wself clickNeedUserLogin];</div><div class="line">              &#125;</div><div class="line">          &#125;];</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="User类"><a href="#User类" class="headerlink" title="User类"></a>User类</h3><h4 id="一-应当包含的信息"><a href="#一-应当包含的信息" class="headerlink" title="一.应当包含的信息:"></a>一.应当包含的信息:</h4><h5 id="用户是否登录"><a href="#用户是否登录" class="headerlink" title="用户是否登录"></a>用户是否登录</h5><h5 id="用户信息（名字、头像、性别、年龄等等）"><a href="#用户信息（名字、头像、性别、年龄等等）" class="headerlink" title="用户信息（名字、头像、性别、年龄等等）"></a>用户信息（名字、头像、性别、年龄等等）</h5><h4 id="二-涵盖的功能"><a href="#二-涵盖的功能" class="headerlink" title="二.涵盖的功能"></a>二.涵盖的功能</h4><h5 id="1-用户信息的存储，修改并发出通知："><a href="#1-用户信息的存储，修改并发出通知：" class="headerlink" title="1.用户信息的存储，修改并发出通知："></a>1.用户信息的存储，修改并发出通知：</h5><h6 id="1-gt-注册或者登录后，服务端返回的用户信息进行解析，给属性赋值，发出用户已经登录的通知（如新浪微博的首页，当用户为登录时，展示的是提示页面，用户登录后展示的是timeline，使用通知来进行消息传递更合适）"><a href="#1-gt-注册或者登录后，服务端返回的用户信息进行解析，给属性赋值，发出用户已经登录的通知（如新浪微博的首页，当用户为登录时，展示的是提示页面，用户登录后展示的是timeline，使用通知来进行消息传递更合适）" class="headerlink" title="1&gt;注册或者登录后，服务端返回的用户信息进行解析，给属性赋值，发出用户已经登录的通知（如新浪微博的首页，当用户为登录时，展示的是提示页面，用户登录后展示的是timeline，使用通知来进行消息传递更合适）"></a>1&gt;注册或者登录后，服务端返回的用户信息进行解析，给属性赋值，发出用户已经登录的通知（如新浪微博的首页，当用户为登录时，展示的是提示页面，用户登录后展示的是timeline，使用通知来进行消息传递更合适）<br></h6><h6 id="2-gt-注册或者登录的接口不一定返回所有的用户信息（合理的做法应该是返回所有必要的用户信息），比如用户的头像性别等，不一定要求用户一次性设置完，并且可以修改，在用户进行个人信息修改之后，应该修改User的相应属性，并发出用户信息修改的通知，这样可以在展示用户信息的页面进行监听并做实时改变"><a href="#2-gt-注册或者登录的接口不一定返回所有的用户信息（合理的做法应该是返回所有必要的用户信息），比如用户的头像性别等，不一定要求用户一次性设置完，并且可以修改，在用户进行个人信息修改之后，应该修改User的相应属性，并发出用户信息修改的通知，这样可以在展示用户信息的页面进行监听并做实时改变" class="headerlink" title="2&gt;注册或者登录的接口不一定返回所有的用户信息（合理的做法应该是返回所有必要的用户信息），比如用户的头像性别等，不一定要求用户一次性设置完，并且可以修改，在用户进行个人信息修改之后，应该修改User的相应属性，并发出用户信息修改的通知，这样可以在展示用户信息的页面进行监听并做实时改变"></a>2&gt;注册或者登录的接口不一定返回所有的用户信息（合理的做法应该是返回所有必要的用户信息），比如用户的头像性别等，不一定要求用户一次性设置完，并且可以修改，在用户进行个人信息修改之后，应该修改User的相应属性，并发出用户信息修改的通知，这样可以在展示用户信息的页面进行监听并做实时改变<br></h6><h6 id="3-gt-User类发出的通知应有一下几种：登录，退出登录，修改密码，修改用户信息（可具体根据业务细分成多个，也可以在发送的通知中携带参数）"><a href="#3-gt-User类发出的通知应有一下几种：登录，退出登录，修改密码，修改用户信息（可具体根据业务细分成多个，也可以在发送的通知中携带参数）" class="headerlink" title="3&gt;User类发出的通知应有一下几种：登录，退出登录，修改密码，修改用户信息（可具体根据业务细分成多个，也可以在发送的通知中携带参数）"></a>3&gt;User类发出的通知应有一下几种：登录，退出登录，修改密码，修改用户信息（可具体根据业务细分成多个，也可以在发送的通知中携带参数）<br></h6><h6 id="4-gt-在load方法中初始化，读取本地数据，给相应的属性赋值；在登录、注册、用户修改了个人信息和app将要本挂起等情况下对用户信息进行本地存储，可使用对象归档或者NSUserDefaults存储；在用户退出登录时，将本地数据移除"><a href="#4-gt-在load方法中初始化，读取本地数据，给相应的属性赋值；在登录、注册、用户修改了个人信息和app将要本挂起等情况下对用户信息进行本地存储，可使用对象归档或者NSUserDefaults存储；在用户退出登录时，将本地数据移除" class="headerlink" title="4&gt;在load方法中初始化，读取本地数据，给相应的属性赋值；在登录、注册、用户修改了个人信息和app将要本挂起等情况下对用户信息进行本地存储，可使用对象归档或者NSUserDefaults存储；在用户退出登录时，将本地数据移除"></a>4&gt;在load方法中初始化，读取本地数据，给相应的属性赋值；在登录、注册、用户修改了个人信息和app将要本挂起等情况下对用户信息进行本地存储，可使用对象归档或者NSUserDefaults存储；在用户退出登录时，将本地数据移除</h6><h5 id="2-用户登录、注册、退出登录和修改密码的本地操作部分："><a href="#2-用户登录、注册、退出登录和修改密码的本地操作部分：" class="headerlink" title="2.用户登录、注册、退出登录和修改密码的本地操作部分："></a>2.用户登录、注册、退出登录和修改密码的本地操作部分：</h5><h6 id="1-gt-一些应用不会一开始就要求用户注册登录，而是在用户进行某种操作时，提示用户只有注册登录之后才能进行此类操作。"><a href="#1-gt-一些应用不会一开始就要求用户注册登录，而是在用户进行某种操作时，提示用户只有注册登录之后才能进行此类操作。" class="headerlink" title="1&gt;一些应用不会一开始就要求用户注册登录，而是在用户进行某种操作时，提示用户只有注册登录之后才能进行此类操作。"></a>1&gt;一些应用不会一开始就要求用户注册登录，而是在用户进行某种操作时，提示用户只有注册登录之后才能进行此类操作。</h6><h6 id="伪代码如下，弹出登录视图，用户登录完毕后通过回调结果来确定是否进行下一步操作。如新浪微博，用户未登录的情况下，可以浏览‘发现’中的微博，当用户点赞时，会弹出登录视图，当用户登录完毕后，点赞的操作会执行，不需要用户再一次点赞"><a href="#伪代码如下，弹出登录视图，用户登录完毕后通过回调结果来确定是否进行下一步操作。如新浪微博，用户未登录的情况下，可以浏览‘发现’中的微博，当用户点赞时，会弹出登录视图，当用户登录完毕后，点赞的操作会执行，不需要用户再一次点赞" class="headerlink" title="//伪代码如下，弹出登录视图，用户登录完毕后通过回调结果来确定是否进行下一步操作。如新浪微博，用户未登录的情况下，可以浏览‘发现’中的微博，当用户点赞时，会弹出登录视图，当用户登录完毕后，点赞的操作会执行，不需要用户再一次点赞"></a>//伪代码如下，弹出登录视图，用户登录完毕后通过回调结果来确定是否进行下一步操作。如新浪微博，用户未登录的情况下，可以浏览‘发现’中的微博，当用户点赞时，会弹出登录视图，当用户登录完毕后，点赞的操作会执行，不需要用户再一次点赞</h6><a id="more"></a>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)clickNeedUserLogin &#123;</div><div class="line">      <span class="keyword">if</span> (user.isLogin) &#123;</div><div class="line">          <span class="comment">//操作</span></div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">          __<span class="keyword">weak</span> __typeof__(<span class="keyword">self</span>)wself = <span class="keyword">self</span>;</div><div class="line">          [vc showLoginVC:^(<span class="built_in">BOOL</span> login)&#123;</div><div class="line">              <span class="keyword">if</span> (login) &#123;</div><div class="line">                  <span class="comment">//@option 根据产品流程决定是否调用此方法</span></div><div class="line">                  [wself clickNeedUserLogin];</div><div class="line">              &#125;</div><div class="line">          &#125;];</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h6 id="2-gt-用户修改密码，根据具体的业务流程来做处理。如：芒果TV中用户修改密码后，会返回上一页面B并弹出提示框要求用户重新登录，用户点击确定，再次返回到上一页面A并刷新视图，然后push到登录页面，登录成功后pop到A，并刷新视图。对于这样的流程，在A和B页面中监听相应的通知，会比使用回调更灵活一些，这样做是将业务与视图进行了分离。"><a href="#2-gt-用户修改密码，根据具体的业务流程来做处理。如：芒果TV中用户修改密码后，会返回上一页面B并弹出提示框要求用户重新登录，用户点击确定，再次返回到上一页面A并刷新视图，然后push到登录页面，登录成功后pop到A，并刷新视图。对于这样的流程，在A和B页面中监听相应的通知，会比使用回调更灵活一些，这样做是将业务与视图进行了分离。" class="headerlink" title="2&gt;用户修改密码，根据具体的业务流程来做处理。如：芒果TV中用户修改密码后，会返回上一页面B并弹出提示框要求用户重新登录，用户点击确定，再次返回到上一页面A并刷新视图，然后push到登录页面，登录成功后pop到A，并刷新视图。对于这样的流程，在A和B页面中监听相应的通知，会比使用回调更灵活一些，这样做是将业务与视图进行了分离。"></a>2&gt;用户修改密码，根据具体的业务流程来做处理。如：芒果TV中用户修改密码后，会返回上一页面B并弹出提示框要求用户重新登录，用户点击确定，再次返回到上一页面A并刷新视图，然后push到登录页面，登录成功后pop到A，并刷新视图。对于这样的流程，在A和B页面中监听相应的通知，会比使用回调更灵活一些，这样做是将业务与视图进行了分离。</h6><hr>
 <h2 id="应用信息"><a href="#应用信息" class="headerlink" title="应用信息"></a>应用信息</h2><hr>
 <h3 id="APP类"><a href="#APP类" class="headerlink" title="APP类"></a>APP类</h3><h4 id="一-应当包含的信息-1"><a href="#一-应当包含的信息-1" class="headerlink" title="一.应当包含的信息:"></a>一.应当包含的信息:</h4><h5 id="版本号、网络状态、各种权限授权状态、缓存大小、用户对网络的偏好设置、用户选择主题切换、字体大小、语言种类等信息"><a href="#版本号、网络状态、各种权限授权状态、缓存大小、用户对网络的偏好设置、用户选择主题切换、字体大小、语言种类等信息" class="headerlink" title="版本号、网络状态、各种权限授权状态、缓存大小、用户对网络的偏好设置、用户选择主题切换、字体大小、语言种类等信息"></a>版本号、网络状态、各种权限授权状态、缓存大小、用户对网络的偏好设置、用户选择主题切换、字体大小、语言种类等信息</h5><h5 id="二-应当提供的方法"><a href="#二-应当提供的方法" class="headerlink" title="二.应当提供的方法"></a>二.应当提供的方法</h5><h6 id="1-gt-关于网络状态，应当提供类方法或者实例方法，返回当前网络状态，当网络状态状态发生改变时，应当发出通知。如天猫，当网络由4G切换为Wi-Fi时，会提示当前为Wi-Fi网络，将加载高质量图片；又如网易云音乐，当用户在听网络歌曲时关闭Wi-Fi，会提示并停止加载网络音频"><a href="#1-gt-关于网络状态，应当提供类方法或者实例方法，返回当前网络状态，当网络状态状态发生改变时，应当发出通知。如天猫，当网络由4G切换为Wi-Fi时，会提示当前为Wi-Fi网络，将加载高质量图片；又如网易云音乐，当用户在听网络歌曲时关闭Wi-Fi，会提示并停止加载网络音频" class="headerlink" title="1&gt;关于网络状态，应当提供类方法或者实例方法，返回当前网络状态，当网络状态状态发生改变时，应当发出通知。如天猫，当网络由4G切换为Wi-Fi时，会提示当前为Wi-Fi网络，将加载高质量图片；又如网易云音乐，当用户在听网络歌曲时关闭Wi-Fi，会提示并停止加载网络音频"></a>1&gt;关于网络状态，应当提供类方法或者实例方法，返回当前网络状态，当网络状态状态发生改变时，应当发出通知。如天猫，当网络由4G切换为Wi-Fi时，会提示当前为Wi-Fi网络，将加载高质量图片；又如网易云音乐，当用户在听网络歌曲时关闭Wi-Fi，会提示并停止加载网络音频</h6><h6 id="2-gt-关于各种权限授权状态，许多APP当用户不同意授权某种权限（如通知）时，会常常弹出提示，要求用户开启权限，这个权限授权的状态由APP类来管理比较合适"><a href="#2-gt-关于各种权限授权状态，许多APP当用户不同意授权某种权限（如通知）时，会常常弹出提示，要求用户开启权限，这个权限授权的状态由APP类来管理比较合适" class="headerlink" title="2&gt;关于各种权限授权状态，许多APP当用户不同意授权某种权限（如通知）时，会常常弹出提示，要求用户开启权限，这个权限授权的状态由APP类来管理比较合适"></a>2&gt;关于各种权限授权状态，许多APP当用户不同意授权某种权限（如通知）时，会常常弹出提示，要求用户开启权限，这个权限授权的状态由APP类来管理比较合适</h6><h6 id="3-gt-关于用户对网络的偏好设置，一些需要消耗大量流量的网络操作，如播放音视频、查看大图、下载资源文件等，为了更好的用户体验一般默认在Wi-Fi状态下才会进行，用户也可自行设置，当用户进行此类操作时，需要判断用户对网络的偏好设置，来进行不通的处理"><a href="#3-gt-关于用户对网络的偏好设置，一些需要消耗大量流量的网络操作，如播放音视频、查看大图、下载资源文件等，为了更好的用户体验一般默认在Wi-Fi状态下才会进行，用户也可自行设置，当用户进行此类操作时，需要判断用户对网络的偏好设置，来进行不通的处理" class="headerlink" title="3&gt;关于用户对网络的偏好设置，一些需要消耗大量流量的网络操作，如播放音视频、查看大图、下载资源文件等，为了更好的用户体验一般默认在Wi-Fi状态下才会进行，用户也可自行设置，当用户进行此类操作时，需要判断用户对网络的偏好设置，来进行不通的处理"></a>3&gt;关于用户对网络的偏好设置，一些需要消耗大量流量的网络操作，如播放音视频、查看大图、下载资源文件等，为了更好的用户体验一般默认在Wi-Fi状态下才会进行，用户也可自行设置，当用户进行此类操作时，需要判断用户对网络的偏好设置，来进行不通的处理</h6><h6 id="4-gt-关于用户选择主题切换、字体大小、语言种类等全局UI相关的设置，用户修改后，发出通知，在响应的UI界面监听通知，并刷新UI"><a href="#4-gt-关于用户选择主题切换、字体大小、语言种类等全局UI相关的设置，用户修改后，发出通知，在响应的UI界面监听通知，并刷新UI" class="headerlink" title="4&gt;关于用户选择主题切换、字体大小、语言种类等全局UI相关的设置，用户修改后，发出通知，在响应的UI界面监听通知，并刷新UI"></a>4&gt;关于用户选择主题切换、字体大小、语言种类等全局UI相关的设置，用户修改后，发出通知，在响应的UI界面监听通知，并刷新UI</h6><h4 id="三-可提供的方法"><a href="#三-可提供的方法" class="headerlink" title="三.可提供的方法"></a>三.可提供的方法</h4><h5 id="待续…"><a href="#待续…" class="headerlink" title="待续…"></a>待续…</h5><hr>
@@ -362,7 +359,7 @@ User类一.应当包含的信息:用户是否登录用户信息（名字、头�
 		isCategory: false,
 		open_in_new: true,
 		root: "/",
-		innerArchive: true,
+		innerArchive: false,
 		showTags: false
 	}
 </script>
@@ -386,85 +383,22 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
   </div>
   <div class="tools-wrap">
-    
-    	<section class="tools-section tools-section-all" q-show="innerArchive">
-        <div class="search-wrap">
-          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
-          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
-          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
-        </div>
-        <div class="widget tagcloud search-tag">
-          <p class="search-tag-wording">tag:</p>
-          <label class="search-switch">
-            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
-          </label>
-          <ul class="article-tag-list" q-show="showTags">
-            
-            <div class="clearfix"></div>
-          </ul>
-        </div>
-        <ul class="search-ul">
-          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
-            3、在根目录_config.yml里添加配置：
-<pre style="font-size: 12px;" q-show="jsonFail">
-  jsonContent:
-    meta: false
-    pages: false
-    posts:
-      title: true
-      date: true
-      path: true
-      text: false
-      raw: false
-      content: false
-      slug: false
-      updated: false
-      comments: false
-      link: false
-      permalink: false
-      excerpt: false
-      categories: false
-      tags: true
-</pre>
-          </p>
-          <li class="search-li" q-repeat="items" q-show="isShow">
-            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
-            <p class="search-time">
-              <i class="icon-calendar icon"></i>
-              <span q-text="date|dateformat"></span>
-            </p>
-            <p class="search-tag">
-              <i class="icon-price-tags icon"></i>
-              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
-            </p>
-          </li>
-        </ul>
-    	</section>
     
 
     
