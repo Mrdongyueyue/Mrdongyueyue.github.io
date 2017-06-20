@@ -139,6 +139,62 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2017/06/20/Objective-C编码规范/">
+                Objective-C编码规范
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-06-20</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h4 id="在团队协作开发中，统一的编码风格有利于维护，提高代码的可读性等。"><a href="#在团队协作开发中，统一的编码风格有利于维护，提高代码的可读性等。" class="headerlink" title="在团队协作开发中，统一的编码风格有利于维护，提高代码的可读性等。"></a>在团队协作开发中，统一的编码风格有利于维护，提高代码的可读性等。</h4><hr>
+<h4 id="1-在团队开发中需要摒弃一些个人偏好（包括但不限于花括号／方法的换行、空行等），遵循编码规范进行编码。"><a href="#1-在团队开发中需要摒弃一些个人偏好（包括但不限于花括号／方法的换行、空行等），遵循编码规范进行编码。" class="headerlink" title="1.在团队开发中需要摒弃一些个人偏好（包括但不限于花括号／方法的换行、空行等），遵循编码规范进行编码。"></a>1.在团队开发中需要摒弃一些个人偏好（包括但不限于花括号／方法的换行、空行等），遵循编码规范进行编码。</h4><h4 id="2-建议先写‘可用的代码’，而‘可扩展的代码’和‘可复用的代码’可以在有余力的情况下再做考虑。"><a href="#2-建议先写‘可用的代码’，而‘可扩展的代码’和‘可复用的代码’可以在有余力的情况下再做考虑。" class="headerlink" title="2.建议先写‘可用的代码’，而‘可扩展的代码’和‘可复用的代码’可以在有余力的情况下再做考虑。"></a>2.建议先写‘可用的代码’，而‘可扩展的代码’和‘可复用的代码’可以在有余力的情况下再做考虑。</h4><blockquote>
+<h4 id="引用：编程的智慧"><a href="#引用：编程的智慧" class="headerlink" title="引用：编程的智慧"></a>引用：<a href="http://www.jianshu.com/p/7645a5ea7f46" target="_blank" rel="external">编程的智慧</a></h4><h4 id="作者：正义的花生"><a href="#作者：正义的花生" class="headerlink" title="作者：正义的花生"></a>作者：<a href="http://www.jianshu.com/u/b1dd2b2c87a8" target="_blank" rel="external">正义的花生</a></h4><h4 id="防止过度工程"><a href="#防止过度工程" class="headerlink" title="防止过度工程"></a>防止过度工程</h4><p>人的脑子真是奇妙的东西。虽然大家都知道过度工程（over-engineering）不好，在实际的工程中却经常不由自主的出现过度工程。我自己也犯过好多次这种错误，所以觉得有必要分析一下，过度工程出现的信号和兆头，这样可以在初期的时候就及时发现并且避免。<br><br>过度工程即将出现的一个重要信号，就是当你过度的思考“将来”，考虑一些还没有发生的事情，还没有出现的需求。比如，“如果我们将来有了上百万行代码，有了几千号人，这样的工具就支持不了了”，“将来我可能需要这个功能，所以我现在就把代码写来放在那里”，“将来很多人要扩充这片代码，所以现在我们就让它变得可重用”……<br><br>这就是为什么很多软件项目如此复杂。实际上没做多少事情，却为了所谓的“将来”，加入了很多不必要的复杂性。眼前的问题还没解决呢，就被“将来”给拖垮了。人们都不喜欢目光短浅的人，然而在现实的工程中，有时候你就是得看近一点，把手头的问题先搞定了，再谈以后扩展的问题。<br><br>另外一种过度工程的来源，是过度的关心“代码重用”。很多人“可用”的代码还没写出来呢，就在关心“重用”。为了让代码可以重用，最后被自己搞出来的各种框架捆住手脚，最后连可用的代码就没写好。如果可用的代码都写不好，又何谈重用呢？很多一开头就考虑太多重用的工程，到后来被人完全抛弃，没人用了，因为别人发现这些代码太难懂了，自己从头开始写一个，反而省好多事。<br><br>过度地关心“测试”，也会引起过度工程。有些人为了测试，把本来很简单的代码改成“方便测试”的形式，结果引入很多复杂性，以至于本来一下就能写对的代码，最后复杂不堪，出现很多bug。<br><br>世界上有两种“没有bug”的代码。一种是“没有明显的bug的代码”，另一种是“明显没有bug的代码”。第一种情况，由于代码复杂不堪，加上很多测试，各种coverage，貌似测试都通过了，所以就认为代码是正确的。第二种情况，由于代码简单直接，就算没写很多测试，你一眼看去就知道它不可能有bug。你喜欢哪一种“没有bug”的代码呢？<br><br>根据这些，我总结出来的防止过度工程的原则如下：<br></p>
+<pre><code>1.先把眼前的问题解决掉，解决好，再考虑将来的扩展问题。
+2.先写出可用的代码，反复推敲，再考虑是否需要重用的问题。
+3.先写出可用，简单，明显没有bug的代码，再考虑测试的问题。
+</code></pre></blockquote>
+<hr>
+<h2 id="一-命名"><a href="#一-命名" class="headerlink" title="一.命名"></a>一.命名</h2><h3 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h3><h4 id="1-清晰：清晰简短，但不能因为追求简短而丧失清晰性"><a href="#1-清晰：清晰简短，但不能因为追求简短而丧失清晰性" class="headerlink" title="1.清晰：清晰简短，但不能因为追求简短而丧失清晰性"></a>1.清晰：清晰简短，但不能因为追求简短而丧失清晰性</h4><h5 id="正例"><a href="#正例" class="headerlink" title="正例"></a>正例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (void)insertObject:(id)obj atIndex:(NSInteger)index;</div><div class="line">- (void)removeObject:(id)obj;</div></pre></td></tr></table></figure>
+<h5 id="反例"><a href="#反例" class="headerlink" title="反例"></a>反例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (void)insert:(id)obj at:(NSInteger)index;</div><div class="line">- (void)remove:(id)obj;</div></pre></td></tr></table></figure>
+<h4 id="名称尽量避免缩写，即便很长，也应当拼写完全"><a href="#名称尽量避免缩写，即便很长，也应当拼写完全" class="headerlink" title="名称尽量避免缩写，即便很长，也应当拼写完全"></a>名称尽量避免缩写，即便很长，也应当拼写完全</h4><h5 id="正例-1"><a href="#正例-1" class="headerlink" title="正例"></a>正例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)setBackgroundColor:(UIColor *)color;</div></pre></td></tr></table></figure>
+<h5 id="反例-1"><a href="#反例-1" class="headerlink" title="反例"></a>反例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)setBkgColor:(UIColor *)color;</div></pre></td></tr></table></figure>
+<h5 id="个人所认为常见的缩写，可能并不是广为人知。"><a href="#个人所认为常见的缩写，可能并不是广为人知。" class="headerlink" title="个人所认为常见的缩写，可能并不是广为人知。"></a>个人所认为常见的缩写，可能并不是广为人知。</h5><h5 id="专业术语缩写（不常见的需要加注释）"><a href="#专业术语缩写（不常见的需要加注释）" class="headerlink" title="专业术语缩写（不常见的需要加注释）"></a>专业术语缩写（不常见的需要加注释）</h5><pre><code>CPU
+SDK
+等等...
+</code></pre><h5 id="可接受的缩写"><a href="#可接受的缩写" class="headerlink" title="可接受的缩写"></a>可接受的缩写</h5><pre><code>obj : object
+info : information
+app : application
+func : function
+btn : button
+等等...
+</code></pre><h4 id="2-一致"><a href="#2-一致" class="headerlink" title="2.一致"></a>2.一致</h4><h5 id="尽可能与官方保持一致，如果不确定某个命名的一致性，可以查看头文件或者官方文档中的范例"><a href="#尽可能与官方保持一致，如果不确定某个命名的一致性，可以查看头文件或者官方文档中的范例" class="headerlink" title="尽可能与官方保持一致，如果不确定某个命名的一致性，可以查看头文件或者官方文档中的范例"></a>尽可能与官方保持一致，如果不确定某个命名的一致性，可以查看头文件或者官方文档中的范例</h5><h4 id="3-前缀"><a href="#3-前缀" class="headerlink" title="3.前缀"></a>3.前缀</h4><h5 id="前缀是名称的重要组成部分，可以防止第三方开发者与苹果公司之间的命名冲突。"><a href="#前缀是名称的重要组成部分，可以防止第三方开发者与苹果公司之间的命名冲突。" class="headerlink" title="前缀是名称的重要组成部分，可以防止第三方开发者与苹果公司之间的命名冲突。"></a>前缀是名称的重要组成部分，可以防止第三方开发者与苹果公司之间的命名冲突。</h5><h4 id="4-书写约定"><a href="#4-书写约定" class="headerlink" title="4.书写约定"></a>4.书写约定</h4><h5 id="声明class-protocol-struct-enum-function-property-时使用驼峰格式。私有方法的声明，使用下划线表示私有方法时，有覆盖已有的苹果私有方法的风险，可能会导致不可预知的错误"><a href="#声明class-protocol-struct-enum-function-property-时使用驼峰格式。私有方法的声明，使用下划线表示私有方法时，有覆盖已有的苹果私有方法的风险，可能会导致不可预知的错误" class="headerlink" title="声明class, protocol, struct, enum, function, property 时使用驼峰格式。私有方法的声明，使用下划线表示私有方法时，有覆盖已有的苹果私有方法的风险，可能会导致不可预知的错误"></a>声明class, protocol, struct, enum, function, property 时使用驼峰格式。私有方法的声明，使用下划线表示私有方法时，有覆盖已有的苹果私有方法的风险，可能会导致不可预知的错误</h5><h4 id="5-数据类型命名"><a href="#5-数据类型命名" class="headerlink" title="5.数据类型命名"></a>5.数据类型命名</h4><h5 id="枚举，使用枚举定义一组相关的整数常量，在C语言中定义枚举是这样写的"><a href="#枚举，使用枚举定义一组相关的整数常量，在C语言中定义枚举是这样写的" class="headerlink" title="枚举，使用枚举定义一组相关的整数常量，在C语言中定义枚举是这样写的"></a>枚举，使用枚举定义一组相关的整数常量，在C语言中定义枚举是这样写的</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> Name &#123;</div><div class="line">  NameX,</div><div class="line">  NameY</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="但是在OC中不推荐这样写，OC中推荐的写法为下面这种"><a href="#但是在OC中不推荐这样写，OC中推荐的写法为下面这种" class="headerlink" title="但是在OC中不推荐这样写，OC中推荐的写法为下面这种"></a>但是在OC中不推荐这样写，OC中推荐的写法为下面这种</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">typedef NS_ENUM(NSInteger, UIControlContentVerticalAlignment) &#123;</div><div class="line">    UIControlContentVerticalAlignmentCenter  = 0,</div><div class="line">    UIControlContentVerticalAlignmentTop     = 1,</div><div class="line">    UIControlContentVerticalAlignmentBottom  = 2,</div><div class="line">    UIControlContentVerticalAlignmentFill    = 3,</div><div class="line">&#125;;</div><div class="line"></div><div class="line">typedef NS_OPTIONS(NSUInteger, UIControlState) &#123;</div><div class="line">    UIControlStateNormal       = 0,</div><div class="line">    UIControlStateHighlighted  = 1 &lt;&lt; 0,                  // used when UIControl isHighlighted is set</div><div class="line">    UIControlStateDisabled     = 1 &lt;&lt; 1,</div><div class="line">    UIControlStateSelected     = 1 &lt;&lt; 2,                  // flag usable by app (see below)</div><div class="line">    UIControlStateFocused NS_ENUM_AVAILABLE_IOS(9_0) = 1 &lt;&lt; 3, // Applicable only when the screen supports focus</div><div class="line">    UIControlStateApplication  = 0x00FF0000,              // additional flags available for application use</div><div class="line">    UIControlStateReserved     = 0xFF000000               // flags reserved for internal framework use</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h5 id="const常量，通常使用const常量，不建议用-define创建常量"><a href="#const常量，通常使用const常量，不建议用-define创建常量" class="headerlink" title="const常量，通常使用const常量，不建议用#define创建常量"></a>const常量，通常使用const常量，不建议用<code>#define</code>创建常量</h5><h5 id="推荐写法"><a href="#推荐写法" class="headerlink" title="推荐写法"></a>推荐写法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//在头文件声明</div><div class="line">FOUNDATION_EXPORT NSString * const Name;</div><div class="line">FOUNDATION_EXTERN NSString * const Name;</div><div class="line">UIKIT_EXTERN NSString * const Name;</div><div class="line">CG_EXTERN CGFloat Name;</div><div class="line"></div><div class="line">//在.m文件的实现</div><div class="line">//使用static修饰</div><div class="line">static NSString * const Name = @&quot;Name&quot;;</div><div class="line">//不使用static修饰</div><div class="line">NSString * const Name = @&quot;Name&quot;;</div></pre></td></tr></table></figure>
+<h5 id="基本数据类型的使用要用OC中的数据类型代替C的数据类型"><a href="#基本数据类型的使用要用OC中的数据类型代替C的数据类型" class="headerlink" title="基本数据类型的使用要用OC中的数据类型代替C的数据类型"></a>基本数据类型的使用要用OC中的数据类型代替C的数据类型</h5><pre><code>CGFloat : float, double //在32位的设备上为float，在64位的为double
+NSInteger : int, long //在32位的设备上为int，在64位的为long
+NSUInteger : unsigned int, unsigned long //同上
+等等...
+</code></pre><hr>
+<h2 id="二-布局"><a href="#二-布局" class="headerlink" title="二.布局"></a>二.布局</h2>
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2017/06/19/项目总结和整理/">
                 项目总结和整理
             </a>
@@ -372,6 +428,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2017/06/20/Objective-C编码规范/">Objective-C编码规范</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2017/06/19/项目总结和整理/">项目总结和整理</a>
             </li>
             
@@ -381,10 +441,6 @@
             
             <li>
                 <a class="footer-post" href="/2017/01/18/wave/">波浪效果的实现</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2017/01/17/MyFristBlog/">测试第一次发布</a>
             </li>
             
         </ul>
