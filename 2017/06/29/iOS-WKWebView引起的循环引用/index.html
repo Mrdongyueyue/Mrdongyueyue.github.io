@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | 斜川的技术博客</title>
+  <title>iOS-WKWebView引起的循环引用 | 斜川的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个从事iOS开发的小学生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="斜川的技术博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="在使用WKWebView时，发现当前控制器pop完之后没有执行dealloc方法，存在内存泄漏。首先排查了一下blcok中是否存在循环引用，发现并没有，使用Instruments的leaks工具也没有发现相关的内存泄漏。然后我留意到在viewDidLoad方法中调用了[_webview.configuration.userContentController addScriptMessageHand">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS-WKWebView引起的循环引用">
+<meta property="og:url" content="http://yoursite.com/2017/06/29/iOS-WKWebView引起的循环引用/index.html">
 <meta property="og:site_name" content="斜川的技术博客">
-<meta property="og:description" content="一个从事iOS开发的小学生">
+<meta property="og:description" content="在使用WKWebView时，发现当前控制器pop完之后没有执行dealloc方法，存在内存泄漏。首先排查了一下blcok中是否存在循环引用，发现并没有，使用Instruments的leaks工具也没有发现相关的内存泄漏。然后我留意到在viewDidLoad方法中调用了[_webview.configuration.userContentController addScriptMessageHand">
+<meta property="og:updated_time" content="2017-06-29T01:54:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="斜川的技术博客">
-<meta name="twitter:description" content="一个从事iOS开发的小学生">
+<meta name="twitter:title" content="iOS-WKWebView引起的循环引用">
+<meta name="twitter:description" content="在使用WKWebView时，发现当前控制器pop完之后没有执行dealloc方法，存在内存泄漏。首先排查了一下blcok中是否存在循环引用，发现并没有，使用Instruments的leaks工具也没有发现相关的内存泄漏。然后我留意到在viewDidLoad方法中调用了[_webview.configuration.userContentController addScriptMessageHand">
   
     <link rel="alternative" href="/atom.xml" title="斜川的技术博客" type="application/atom+xml">
   
@@ -140,211 +141,139 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-iOS-WKWebView引起的循环引用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      iOS-WKWebView引起的循环引用
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/29/iOS-WKWebView引起的循环引用/" class="archive-article-date">
+
+        
+        <a href="/2017/06/29/iOS-WKWebView引起的循环引用/" class="archive-article-date">
   	<time datetime="2017-06-29T01:54:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-29</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/29/iOS-WKWebView引起的循环引用/">iOS-WKWebView引起的循环引用</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="在使用WKWebView时，发现当前控制器pop完之后没有执行dealloc方法，存在内存泄漏。"><a href="#在使用WKWebView时，发现当前控制器pop完之后没有执行dealloc方法，存在内存泄漏。" class="headerlink" title="在使用WKWebView时，发现当前控制器pop完之后没有执行dealloc方法，存在内存泄漏。"></a>在使用<code>WKWebView</code>时，发现当前控制器pop完之后没有执行<code>dealloc</code>方法，存在内存泄漏。</h5><h5 id="首先排查了一下blcok中是否存在循环引用，发现并没有，使用Instruments的leaks工具也没有发现相关的内存泄漏。然后我留意到在viewDidLoad方法中调用了-webview-configuration-userContentController-addScriptMessageHandler-self-name-quot-xx-quot-方法，并实现代理方法-void-userContentController-WKUserContentController-userContentController-didReceiveScriptMessage-WKScriptMessage-message，在dealloc方法中调用对应的-webview-configuration-userContentController-removeScriptMessageHandlerForName-quot-xx-quot-移除方法，但是dealloc并没有执行。"><a href="#首先排查了一下blcok中是否存在循环引用，发现并没有，使用Instruments的leaks工具也没有发现相关的内存泄漏。然后我留意到在viewDidLoad方法中调用了-webview-configuration-userContentController-addScriptMessageHandler-self-name-quot-xx-quot-方法，并实现代理方法-void-userContentController-WKUserContentController-userContentController-didReceiveScriptMessage-WKScriptMessage-message，在dealloc方法中调用对应的-webview-configuration-userContentController-removeScriptMessageHandlerForName-quot-xx-quot-移除方法，但是dealloc并没有执行。" class="headerlink" title="首先排查了一下blcok中是否存在循环引用，发现并没有，使用Instruments的leaks工具也没有发现相关的内存泄漏。然后我留意到在viewDidLoad方法中调用了[_webview.configuration.userContentController addScriptMessageHandler:self name:@&quot;xx&quot;];方法，并实现代理方法- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message，在dealloc方法中调用对应的[_webview.configuration.userContentController removeScriptMessageHandlerForName:@&quot;xx&quot;];移除方法，但是dealloc并没有执行。"></a>首先排查了一下<code>blcok</code>中是否存在循环引用，发现并没有，使用<code>Instruments</code>的<code>leaks</code>工具也没有发现相关的内存泄漏。然后我留意到在<code>viewDidLoad</code>方法中调用了<code>[_webview.configuration.userContentController addScriptMessageHandler:self name:@&quot;xx&quot;];</code>方法，并实现代理方法<code>- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message</code>，在<code>dealloc</code>方法中调用对应的<code>[_webview.configuration.userContentController removeScriptMessageHandlerForName:@&quot;xx&quot;];</code>移除方法，但是<code>dealloc</code>并没有执行。</h5><h5 id="解决办法：不在viewDidLoad和dealloc方法中添加和移除，改为在控制器将要显示和消失的方法中添加和移除。"><a href="#解决办法：不在viewDidLoad和dealloc方法中添加和移除，改为在控制器将要显示和消失的方法中添加和移除。" class="headerlink" title="解决办法：不在viewDidLoad和dealloc方法中添加和移除，改为在控制器将要显示和消失的方法中添加和移除。"></a>解决办法：不在<code>viewDidLoad</code>和<code>dealloc</code>方法中添加和移除，改为在控制器将要显示和消失的方法中添加和移除。</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)viewWillAppear:(<span class="built_in">BOOL</span>)animated &#123;</div><div class="line">    [<span class="keyword">super</span> viewWillAppear:animated];</div><div class="line">    [_webview.configuration.userContentController addScriptMessageHandler:<span class="keyword">self</span> name:<span class="string">@"xx"</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewWillDisappear:(<span class="built_in">BOOL</span>)animated &#123;</div><div class="line">    [<span class="keyword">super</span> viewWillDisappear:animated];</div><div class="line">    [_webview.configuration.userContentController removeScriptMessageHandlerForName:<span class="string">@"xx"</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="ps-在使用WKWebView时，通过js调用原生方法，可以拦截url，也可以用上面这种方法。"><a href="#ps-在使用WKWebView时，通过js调用原生方法，可以拦截url，也可以用上面这种方法。" class="headerlink" title="ps:在使用WKWebView时，通过js调用原生方法，可以拦截url，也可以用上面这种方法。"></a>ps:在使用<code>WKWebView</code>时，通过<code>js</code>调用原生方法，可以拦截<code>url</code>，也可以用上面这种方法。</h5>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/29/iOS-WKWebView引起的循环引用/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/20/Objective-C编码规范/" class="archive-article-date">
-  	<time datetime="2017-06-20T01:39:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-20</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/20/Objective-C编码规范/">Objective-C编码规范</a>
-    </h1>
+  
+    <a href="/2017/06/20/Objective-C编码规范/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Objective-C编码规范</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/19/项目总结和整理/" class="archive-article-date">
-  	<time datetime="2017-06-19T07:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/19/项目总结和整理/">项目总结和整理</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/15/mobike-我的贴纸/" class="archive-article-date">
-  	<time datetime="2017-06-15T06:41:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/mobike-我的贴纸/">高仿摩拜单车我的贴纸效果</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/18/wave/" class="archive-article-date">
-  	<time datetime="2017-01-18T03:08:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/18/wave/">波浪效果的实现</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/17/MyFristBlog/" class="archive-article-date">
-  	<time datetime="2017-01-17T06:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/17/MyFristBlog/">测试第一次发布</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/17/hello-world/" class="archive-article-date">
-  	<time datetime="2017-01-17T05:16:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -367,8 +296,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
