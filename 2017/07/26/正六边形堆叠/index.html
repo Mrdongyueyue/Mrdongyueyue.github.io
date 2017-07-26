@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 斜川的技术博客</title>
+  <title>正六边形堆叠 | 斜川的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个从事iOS开发的小学生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="斜川的技术博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="一些app会有此类效果，我按照自己的理解仿写了一个1.如何绘制单个正六边形使用继承于CAShapeLayer的YYHexagonsLayer设置路径来绘制单个六边形123456//YYHexagonsLayer的属性与方法@property (nonatomic, strong) UIColor *normalColor;@property (nonatomic, strong) UIColor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正六边形堆叠">
+<meta property="og:url" content="http://yoursite.com/2017/07/26/正六边形堆叠/index.html">
 <meta property="og:site_name" content="斜川的技术博客">
-<meta property="og:description" content="一个从事iOS开发的小学生">
+<meta property="og:description" content="一些app会有此类效果，我按照自己的理解仿写了一个1.如何绘制单个正六边形使用继承于CAShapeLayer的YYHexagonsLayer设置路径来绘制单个六边形123456//YYHexagonsLayer的属性与方法@property (nonatomic, strong) UIColor *normalColor;@property (nonatomic, strong) UIColor">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1389572-35fbb4867cca1c93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1389572-a2ea1571adf42d11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://github.com/Mrdongyueyue/Hexagons/raw/master/hexagons.gif">
+<meta property="og:updated_time" content="2017-07-26T03:56:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="斜川的技术博客">
-<meta name="twitter:description" content="一个从事iOS开发的小学生">
+<meta name="twitter:title" content="正六边形堆叠">
+<meta name="twitter:description" content="一些app会有此类效果，我按照自己的理解仿写了一个1.如何绘制单个正六边形使用继承于CAShapeLayer的YYHexagonsLayer设置路径来绘制单个六边形123456//YYHexagonsLayer的属性与方法@property (nonatomic, strong) UIColor *normalColor;@property (nonatomic, strong) UIColor">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1389572-35fbb4867cca1c93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="斜川的技术博客" type="application/atom+xml">
   
@@ -140,238 +145,156 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-正六边形堆叠" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      正六边形堆叠
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/26/正六边形堆叠/" class="archive-article-date">
+
+        
+        <a href="/2017/07/26/正六边形堆叠/" class="archive-article-date">
   	<time datetime="2017-07-26T03:45:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-26</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/26/正六边形堆叠/">正六边形堆叠</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一些app会有此类效果，我按照自己的理解仿写了一个"><a href="#一些app会有此类效果，我按照自己的理解仿写了一个" class="headerlink" title="一些app会有此类效果，我按照自己的理解仿写了一个"></a>一些app会有此类效果，我按照自己的理解仿写了一个</h4><h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://upload-images.jianshu.io/upload_images/1389572-35fbb4867cca1c93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="如图"></h2><h4 id="1-如何绘制单个正六边形"><a href="#1-如何绘制单个正六边形" class="headerlink" title="1.如何绘制单个正六边形"></a>1.如何绘制单个正六边形</h4><h5 id="使用继承于CAShapeLayer的YYHexagonsLayer设置路径来绘制单个六边形"><a href="#使用继承于CAShapeLayer的YYHexagonsLayer设置路径来绘制单个六边形" class="headerlink" title="使用继承于CAShapeLayer的YYHexagonsLayer设置路径来绘制单个六边形"></a>使用继承于<code>CAShapeLayer</code>的<code>YYHexagonsLayer</code>设置路径来绘制单个六边形</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//YYHexagonsLayer的属性与方法</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIColor</span> *normalColor;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIColor</span> *highlightColor;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>, <span class="keyword">readonly</span>) <span class="built_in">CGFloat</span> sideLength;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>, <span class="keyword">getter</span>=isSelected) <span class="built_in">BOOL</span> selected;</div><div class="line">+ (<span class="keyword">instancetype</span>)layerWithSideLength:(<span class="built_in">CGFloat</span>)sideLength;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//构造方法</span></div><div class="line">+ (<span class="keyword">instancetype</span>)layerWithSideLength:(<span class="built_in">CGFloat</span>)sideLength &#123;</div><div class="line">    YYHexagonsLayer *layer = [YYHexagonsLayer layer];</div><div class="line"></div><div class="line">    <span class="built_in">CGFloat</span> utilAngle = M_PI / <span class="number">3</span>;</div><div class="line"></div><div class="line">    <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPath];</div><div class="line">    [path moveToPoint:<span class="built_in">CGPointMake</span>(cos(utilAngle * <span class="number">0.5</span>) * sideLength, sin(utilAngle * <span class="number">0.5</span>) * sideLength)];</div><div class="line"></div><div class="line">    [path addLineToPoint:<span class="built_in">CGPointMake</span>(cos(utilAngle * <span class="number">1.5</span>) * sideLength, sin(utilAngle * <span class="number">1.5</span>) * sideLength)];</div><div class="line">    [path addLineToPoint:<span class="built_in">CGPointMake</span>(cos(utilAngle * <span class="number">2.5</span>) * sideLength, sin(utilAngle * <span class="number">2.5</span>) * sideLength)];</div><div class="line">    [path addLineToPoint:<span class="built_in">CGPointMake</span>(cos(utilAngle * <span class="number">3.5</span>) * sideLength, sin(utilAngle * <span class="number">3.5</span>) * sideLength)];</div><div class="line">    [path addLineToPoint:<span class="built_in">CGPointMake</span>(cos(utilAngle * <span class="number">4.5</span>) * sideLength, sin(utilAngle * <span class="number">4.5</span>) * sideLength)];</div><div class="line">    [path addLineToPoint:<span class="built_in">CGPointMake</span>(cos(utilAngle * <span class="number">5.5</span>) * sideLength, sin(utilAngle * <span class="number">5.5</span>) * sideLength)];</div><div class="line"></div><div class="line">    layer.path = path.CGPath;</div><div class="line">    layer.fillColor = <span class="built_in">UIColor</span>.orangeColor.CGColor;</div><div class="line">    layer.bounds = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, sideLength * <span class="number">2</span>, sin(utilAngle * <span class="number">1</span>) * sideLength * <span class="number">2</span>);</div><div class="line"></div><div class="line">    layer-&gt;_sideLength = sideLength;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> layer;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="有了YYHexagonsLayer之后，使用layerWithSideLength-方法创建layer，设置position并添加到superLayer上，一个正六边形就出现了。"><a href="#有了YYHexagonsLayer之后，使用layerWithSideLength-方法创建layer，设置position并添加到superLayer上，一个正六边形就出现了。" class="headerlink" title="有了YYHexagonsLayer之后，使用layerWithSideLength:方法创建layer，设置position并添加到superLayer上，一个正六边形就出现了。"></a>有了<code>YYHexagonsLayer</code>之后，使用<code>layerWithSideLength:</code>方法创建<code>layer</code>，设置<code>position</code>并添加到<code>superLayer</code>上，一个正六边形就出现了。</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">YYHexagonsLayer *layer = [YYHexagonsLayer layerWithSideLength:<span class="number">30</span>];</div><div class="line">layer.normalColor = <span class="built_in">UIColor</span>.orangeColor;</div><div class="line">layer.position = <span class="built_in">CGPointMake</span>(<span class="number">100</span>, <span class="number">100</span>);</div><div class="line">[<span class="keyword">self</span>.view.layer addSublayer:layer];</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1389572-a2ea1571adf42d11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="一个正六边形"></p>
+<h5 id="到此第一步就算完成了。"><a href="#到此第一步就算完成了。" class="headerlink" title="到此第一步就算完成了。"></a>到此第一步就算完成了。</h5><hr>
+<h4 id="2-如何将多个正六边形堆叠在一起"><a href="#2-如何将多个正六边形堆叠在一起" class="headerlink" title="2.如何将多个正六边形堆叠在一起"></a>2.如何将多个正六边形堆叠在一起</h4><h5 id="每个正六边形的position的计算都要用到三角函数变换，并不难，只是麻烦了一些。"><a href="#每个正六边形的position的计算都要用到三角函数变换，并不难，只是麻烦了一些。" class="headerlink" title="每个正六边形的position的计算都要用到三角函数变换，并不难，只是麻烦了一些。"></a>每个正六边形的<code>position</code>的计算都要用到三角函数变换，并不难，只是麻烦了一些。</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//首先，我仿照UITableView，为YYHexagonsGroupView添加了数据源、代理方法</span></div><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">YYHexagonsGroupViewDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">@required</span></div><div class="line">- (<span class="built_in">NSInteger</span>)numberOfHexagonsInGroupView:(YYHexagonsGroupView *)hexagonsGroupView;</div><div class="line">- (YYHexagonsLayer *)hexagonsGroupView:(YYHexagonsGroupView *)hexagonsGroupView hexagonsForRowAtIndex:(<span class="built_in">NSInteger</span>)index;</div><div class="line"></div><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)hexagonsGroupView:(YYHexagonsGroupView *)hexagonsGroupView didSelectRowAtIndex:(<span class="built_in">NSInteger</span>)index;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="comment">//下面是属性与方法</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span>&lt;YYHexagonsGroupViewDelegate&gt; delegate;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGFloat</span> utilWidth;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGFloat</span> margin;</div><div class="line"><span class="comment">//添加了刷新所有和刷新某几个视图的方法</span></div><div class="line">- (<span class="keyword">void</span>)reloadData;</div><div class="line">- (<span class="keyword">void</span>)reloadIndexs:(<span class="built_in">NSArray</span>&lt;<span class="built_in">NSNumber</span> *&gt; *)indexs;</div><div class="line"></div><div class="line">- (YYHexagonsLayer *)hexagonsLayerWithIndex:(<span class="built_in">NSInteger</span>)index;</div></pre></td></tr></table></figure>
+<h5 id="在YYHexagonsGroupView-m中的实现"><a href="#在YYHexagonsGroupView-m中的实现" class="headerlink" title="在YYHexagonsGroupView.m中的实现"></a>在<code>YYHexagonsGroupView.m</code>中的实现</h5><h5 id="使用一个字典来存放所有的六边形，key值为-index"><a href="#使用一个字典来存放所有的六边形，key值为-index" class="headerlink" title="使用一个字典来存放所有的六边形，key值为@(index)"></a>使用一个字典来存放所有的六边形，<code>key</code>值为<code>@(index)</code></h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//属性</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIScrollView</span> *scrollView;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSMutableDictionary</span>&lt;<span class="built_in">NSNumber</span> *,YYHexagonsLayer *&gt; *hexagonsLayers;</div></pre></td></tr></table></figure>
+<h5 id="创建子视图"><a href="#创建子视图" class="headerlink" title="创建子视图"></a>创建子视图</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建子视图</span></div><div class="line">- (<span class="keyword">void</span>)createSubviews &#123;</div><div class="line">    _scrollView = [[<span class="built_in">UIScrollView</span> alloc] init];</div><div class="line">    [_scrollView addGestureRecognizer:[[<span class="built_in">UITapGestureRecognizer</span> alloc] initWithTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(tap:)]];</div><div class="line">    [<span class="keyword">self</span> addSubview:_scrollView];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="刷新方法"><a href="#刷新方法" class="headerlink" title="刷新方法"></a>刷新方法</h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//刷新方法</span></div><div class="line">- (<span class="keyword">void</span>)reloadData &#123;</div><div class="line">    [_hexagonsLayers enumerateKeysAndObjectsUsingBlock:^(<span class="built_in">NSNumber</span> * _Nonnull key, YYHexagonsLayer * _Nonnull obj, <span class="built_in">BOOL</span> * _Nonnull stop) &#123;</div><div class="line">        [obj removeFromSuperlayer];</div><div class="line">    &#125;];</div><div class="line">    [_hexagonsLayers removeAllObjects];</div><div class="line"></div><div class="line">    [<span class="keyword">self</span> createSublayers];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)reloadIndexs:(<span class="built_in">NSArray</span>&lt;<span class="built_in">NSNumber</span> *&gt; *)indexs &#123;</div><div class="line">    [indexs enumerateObjectsUsingBlock:^(<span class="built_in">NSNumber</span> * _Nonnull obj, <span class="built_in">NSUInteger</span> idx, <span class="built_in">BOOL</span> * _Nonnull stop) &#123;</div><div class="line">        [_hexagonsLayers removeObjectForKey:obj];</div><div class="line">        [_hexagonsLayers[obj] removeFromSuperlayer];</div><div class="line">        _hexagonsLayers[obj] = [_delegate hexagonsGroupView:<span class="keyword">self</span> hexagonsForRowAtIndex:obj.integerValue];</div><div class="line">    &#125;];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="创建正六边形-并计算position和-scrollView的contentSize"><a href="#创建正六边形-并计算position和-scrollView的contentSize" class="headerlink" title="创建正六边形, 并计算position和_scrollView的contentSize"></a>创建正六边形, 并计算<code>position</code>和<code>_scrollView</code>的<code>contentSize</code></h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建正六边形方法</span></div><div class="line">- (<span class="keyword">void</span>)createSublayers &#123;</div><div class="line">    <span class="keyword">if</span> (!_hexagonsLayers) &#123;</div><div class="line">        _hexagonsLayers = [<span class="built_in">NSMutableDictionary</span> dictionary];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">NSInteger</span> MaxCount = <span class="number">0</span>;</div><div class="line">    <span class="keyword">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(numberOfHexagonsInGroupView:)]) &#123;</div><div class="line">        MaxCount = [_delegate numberOfHexagonsInGroupView:<span class="keyword">self</span>];</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">//此处为测试时的代码，可删掉</span></div><div class="line">        <span class="built_in">CGFloat</span> width = <span class="keyword">self</span>.frame.size.width;</div><div class="line">        <span class="built_in">CGFloat</span> height = <span class="keyword">self</span>.frame.size.height;</div><div class="line"></div><div class="line">        <span class="built_in">CGFloat</span> utilWidth = _utilWidth;</div><div class="line">        <span class="built_in">CGFloat</span> margin = _margin;</div><div class="line"></div><div class="line">        <span class="built_in">NSInteger</span> MaxI = floor((width - (<span class="number">0.5</span> * utilWidth * <span class="number">2</span> * sin(M_PI / <span class="number">3</span>))) / (utilWidth * <span class="number">2</span> * sin(M_PI / <span class="number">3</span>) + margin));</div><div class="line"></div><div class="line">        MaxCount = floor((height - utilWidth) / (utilWidth + cos(M_PI/<span class="number">3</span>) * (utilWidth + margin))) * MaxI;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">CGFloat</span> maxY = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="built_in">NSInteger</span> i = <span class="number">0</span>; i &lt; MaxCount; i ++) &#123;</div><div class="line">        maxY = [<span class="keyword">self</span> addSublayerWithIndex:i];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    _scrollView.contentSize = <span class="built_in">CGSizeMake</span>(<span class="keyword">self</span>.bounds.size.width, maxY + _utilWidth);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">CGFloat</span>)addSublayerWithIndex:(<span class="built_in">NSInteger</span>)index &#123;</div><div class="line"></div><div class="line">    <span class="built_in">NSInteger</span> row = <span class="number">0</span>, i = <span class="number">0</span>;</div><div class="line"></div><div class="line">    <span class="built_in">CGFloat</span> width = <span class="keyword">self</span>.frame.size.width;</div><div class="line">    <span class="built_in">CGFloat</span> height = <span class="keyword">self</span>.frame.size.height;</div><div class="line"></div><div class="line">    <span class="built_in">CGFloat</span> utilWidth = _utilWidth;</div><div class="line">    <span class="built_in">CGFloat</span> margin = _margin;</div><div class="line"></div><div class="line">    <span class="built_in">NSInteger</span> MaxI = floor((width - (<span class="number">0.5</span> * utilWidth * <span class="number">2</span> * sin(M_PI / <span class="number">3</span>))) / (utilWidth * <span class="number">2</span> * sin(M_PI / <span class="number">3</span>) + margin));</div><div class="line"></div><div class="line">    row = index / MaxI;</div><div class="line">    i = index % MaxI;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (row * MaxI + i &gt; [_delegate numberOfHexagonsInGroupView:<span class="keyword">self</span>]) &#123;</div><div class="line">        <span class="keyword">return</span> _scrollView.contentSize.height;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">NSInteger</span> MaxRow = <span class="number">0</span>;</div><div class="line">    <span class="keyword">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(numberOfHexagonsInGroupView:)]) &#123;</div><div class="line">        MaxRow = ceil([_delegate numberOfHexagonsInGroupView:<span class="keyword">self</span>] / (<span class="keyword">double</span>)MaxI);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">//此处为测试时的代码，可删掉</span></div><div class="line">        MaxRow = floor((height - utilWidth) / (utilWidth + cos(M_PI/<span class="number">3</span>) * (utilWidth + margin)));</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="built_in">CGFloat</span> positionY = utilWidth * <span class="number">2</span> + (utilWidth + cos(M_PI/<span class="number">3</span>) * (utilWidth + margin)) * row;</div><div class="line">    YYHexagonsLayer *layer = <span class="literal">nil</span>;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(hexagonsGroupView:hexagonsForRowAtIndex:)]) &#123;</div><div class="line">        layer = [_delegate hexagonsGroupView:<span class="keyword">self</span> hexagonsForRowAtIndex:row * MaxI + i];</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">//此处为测试时的代码，可删掉</span></div><div class="line">        layer = [YYHexagonsLayer layerWithSideLength:utilWidth];</div><div class="line">        layer.normalColor = <span class="built_in">UIColor</span>.orangeColor;</div><div class="line">        layer.highlightColor = <span class="built_in">UIColor</span>.cyanColor;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">CGFloat</span> x_offset = <span class="number">0</span>;</div><div class="line">    <span class="keyword">if</span> (row % <span class="number">2</span> == <span class="number">0</span>) &#123;</div><div class="line">        x_offset = utilWidth * <span class="number">2</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        x_offset = utilWidth + margin * <span class="number">0.5</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">CGFloat</span> positionX = (i + <span class="number">0.5</span>) * utilWidth * <span class="number">2</span> * sin(M_PI / <span class="number">3</span>) + i * margin + x_offset;</div><div class="line">    layer.position = <span class="built_in">CGPointMake</span>(positionX, positionY);</div><div class="line"></div><div class="line">    [_scrollView.layer addSublayer:layer];</div><div class="line">    <span class="keyword">return</span> layer.position.y;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (YYHexagonsLayer *)hexagonsLayerWithIndex:(<span class="built_in">NSInteger</span>)index &#123;</div><div class="line">    YYHexagonsLayer *layer = _hexagonsLayers[@(index)];</div><div class="line">    <span class="keyword">if</span> (layer == <span class="literal">nil</span>) &#123;</div><div class="line">        layer = [YYHexagonsLayer layerWithSideLength:_utilWidth];</div><div class="line">        _hexagonsLayers[@(index)] = layer;</div><div class="line">        [<span class="keyword">self</span> addSublayerWithIndex:index];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> layer;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="点击事件，获取点击位置point，转换坐标系获得convertPoint，遍历-hexagonsLayers字典，看convertPoint在哪一个六边形的路径path内，使用到的函数是CG-EXTERN-bool-CGPathContainsPoint-CGPathRef-cg-nullable-path-const-CGAffineTransform-nullable-m-CGPoint-point-bool-eoFill"><a href="#点击事件，获取点击位置point，转换坐标系获得convertPoint，遍历-hexagonsLayers字典，看convertPoint在哪一个六边形的路径path内，使用到的函数是CG-EXTERN-bool-CGPathContainsPoint-CGPathRef-cg-nullable-path-const-CGAffineTransform-nullable-m-CGPoint-point-bool-eoFill" class="headerlink" title="点击事件，获取点击位置point，转换坐标系获得convertPoint，遍历_hexagonsLayers字典，看convertPoint在哪一个六边形的路径path内，使用到的函数是CG_EXTERN bool CGPathContainsPoint(CGPathRef cg_nullable path, const CGAffineTransform * __nullable m, CGPoint point, bool eoFill)"></a>点击事件，获取点击位置<code>point</code>，转换坐标系获得<code>convertPoint</code>，遍历<code>_hexagonsLayers</code>字典，看<code>convertPoint</code>在哪一个六边形的路径<code>path</code>内，使用到的函数是<code>CG_EXTERN bool CGPathContainsPoint(CGPathRef cg_nullable path, const CGAffineTransform * __nullable m, CGPoint point, bool eoFill)</code></h5><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//点击事件</span></div><div class="line">- (<span class="keyword">void</span>)tap:(<span class="built_in">UITapGestureRecognizer</span> *)tap &#123;</div><div class="line">    <span class="built_in">CGPoint</span> point = [tap locationInView:_scrollView];</div><div class="line">    [_hexagonsLayers enumerateKeysAndObjectsUsingBlock:^(<span class="built_in">NSNumber</span> * _Nonnull key, YYHexagonsLayer * _Nonnull layer, <span class="built_in">BOOL</span> * _Nonnull stop) &#123;</div><div class="line">        <span class="built_in">CGPoint</span> convertPoint = [layer convertPoint:point fromLayer:_scrollView.layer];</div><div class="line">        <span class="keyword">if</span> (<span class="built_in">CGPathContainsPoint</span>(layer.path, <span class="literal">NULL</span>, convertPoint, <span class="literal">NO</span>)) &#123;</div><div class="line">            <span class="keyword">if</span> ([_delegate respondsToSelector:<span class="keyword">@selector</span>(hexagonsGroupView:didSelectRowAtIndex:)]) &#123;</div><div class="line">                [_delegate hexagonsGroupView:<span class="keyword">self</span> didSelectRowAtIndex:key.integerValue];</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                layer.selected = !layer.isSelected;</div><div class="line">            &#125;</div><div class="line">            *stop = <span class="literal">YES</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//layoutSubviews</span></div><div class="line">- (<span class="keyword">void</span>)layoutSubviews &#123;</div><div class="line">    [<span class="keyword">super</span> layoutSubviews];</div><div class="line">    _scrollView.frame = <span class="keyword">self</span>.bounds;</div><div class="line">    [<span class="keyword">self</span> createSublayers];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="到此第2步就完成了"><a href="#到此第2步就完成了" class="headerlink" title="到此第2步就完成了"></a>到此第2步就完成了</h5><hr>
+<h4 id="3-使用YYHexagonsGroupView"><a href="#3-使用YYHexagonsGroupView" class="headerlink" title="3.使用YYHexagonsGroupView"></a>3.使用<code>YYHexagonsGroupView</code></h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建</span></div><div class="line">_groupView = [[YYHexagonsGroupView alloc] init];</div><div class="line">_groupView.translatesAutoresizingMaskIntoConstraints = <span class="literal">NO</span>;</div><div class="line">_groupView.utilWidth = <span class="number">15</span>;</div><div class="line">_groupView.margin = <span class="number">2</span>;</div><div class="line">_groupView.delegate = <span class="keyword">self</span>;</div><div class="line">...设置约束代码略去</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//实现代理方法</span></div><div class="line">- (<span class="built_in">NSInteger</span>)numberOfHexagonsInGroupView:(YYHexagonsGroupView *)hexagonsGroupView &#123;</div><div class="line">    <span class="keyword">return</span> _count;</div><div class="line">&#125;</div><div class="line">- (YYHexagonsLayer *)hexagonsGroupView:(YYHexagonsGroupView *)hexagonsGroupView hexagonsForRowAtIndex:(<span class="built_in">NSInteger</span>)index &#123;</div><div class="line">    YYHexagonsLayer *layer = [hexagonsGroupView hexagonsLayerWithIndex:index];</div><div class="line">    layer.highlightColor = <span class="built_in">UIColor</span>.cyanColor;</div><div class="line">    layer.normalColor = <span class="built_in">UIColor</span>.orangeColor;</div><div class="line">    layer.selected = _selected[index];</div><div class="line"></div><div class="line">    <span class="keyword">return</span> layer;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)hexagonsGroupView:(YYHexagonsGroupView *)hexagonsGroupView didSelectRowAtIndex:(<span class="built_in">NSInteger</span>)index &#123;</div><div class="line">    _selected[index] = !_selected[index];</div><div class="line">    [hexagonsGroupView reloadIndexs:@[@(index)]];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)addHexagonsCount:(<span class="built_in">UIButton</span> *)button &#123;</div><div class="line">    _count += <span class="number">20</span>;</div><div class="line">    [_groupView reloadData];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="到此第三步就结束了"><a href="#到此第三步就结束了" class="headerlink" title="到此第三步就结束了"></a>到此第三步就结束了</h5><h5 id="最后放上效果图和demo地址"><a href="#最后放上效果图和demo地址" class="headerlink" title="最后放上效果图和demo地址"></a>最后放上效果图和demo地址</h5><p><img src="https://github.com/Mrdongyueyue/Hexagons/raw/master/hexagons.gif" alt="效果图"></p>
+<p>#####<a href="https://github.com/Mrdongyueyue/Hexagons" target="_blank" rel="external">demo链接</a></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/26/正六边形堆叠/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/29/iOS-WKWebView引起的循环引用/" class="archive-article-date">
-  	<time datetime="2017-06-29T01:54:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-29</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/29/iOS-WKWebView引起的循环引用/">iOS-WKWebView引起的循环引用</a>
-    </h1>
+  
+    <a href="/2017/06/29/iOS-WKWebView引起的循环引用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS-WKWebView引起的循环引用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/20/Objective-C编码规范/" class="archive-article-date">
-  	<time datetime="2017-06-20T01:39:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/20/Objective-C编码规范/">Objective-C编码规范</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/19/项目总结和整理/" class="archive-article-date">
-  	<time datetime="2017-06-19T07:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/19/项目总结和整理/">项目总结和整理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/15/mobike-我的贴纸/" class="archive-article-date">
-  	<time datetime="2017-06-15T06:41:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/mobike-我的贴纸/">高仿摩拜单车我的贴纸效果</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/18/wave/" class="archive-article-date">
-  	<time datetime="2017-01-18T03:08:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/18/wave/">波浪效果的实现</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/17/MyFristBlog/" class="archive-article-date">
-  	<time datetime="2017-01-17T06:45:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/17/MyFristBlog/">测试第一次发布</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/17/hello-world/" class="archive-article-date">
-  	<time datetime="2017-01-17T05:16:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -394,8 +317,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
